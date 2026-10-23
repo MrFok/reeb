@@ -121,6 +121,18 @@ fn scan_for_key(key: egui::Key) -> Option<u16> {
         Period => 0x34,
         Slash => 0x35,
         Space => 0x39,
+        F1 => 0x3b,
+        F2 => 0x3c,
+        F3 => 0x3d,
+        F4 => 0x3e,
+        F5 => 0x3f,
+        F6 => 0x40,
+        F7 => 0x41,
+        F8 => 0x42,
+        F9 => 0x43,
+        F10 => 0x44,
+        F11 => 0x57,
+        F12 => 0x58,
         ArrowLeft => 0x14b,
         ArrowRight => 0x14d,
         ArrowUp => 0x148,
@@ -197,4 +209,37 @@ fn smoke_audio() -> Result<(), Box<dyn std::error::Error>> {
         shared.frames.load(Ordering::Relaxed)
     );
     Ok(())
+}
+
+#[cfg(test)]
+mod key_tests {
+    use super::*;
+
+    #[test]
+    fn focused_function_keys_match_the_background_input_scans() {
+        for (index, key) in [
+            egui::Key::F1,
+            egui::Key::F2,
+            egui::Key::F3,
+            egui::Key::F4,
+            egui::Key::F5,
+            egui::Key::F6,
+            egui::Key::F7,
+            egui::Key::F8,
+            egui::Key::F9,
+            egui::Key::F10,
+            egui::Key::F11,
+            egui::Key::F12,
+        ]
+        .into_iter()
+        .enumerate()
+        {
+            let expected = if index < 10 {
+                0x3b + index as u16
+            } else {
+                0x57 + (index - 10) as u16
+            };
+            assert_eq!(scan_for_key(key), Some(expected));
+        }
+    }
 }

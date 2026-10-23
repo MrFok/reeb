@@ -24,6 +24,15 @@ static CGEventRef key_event(CGEventTapProxy proxy, CGEventType type, CGEventRef 
         } else {
             CFRunLoopStop(input->loop);
         }
+    } else if (type == (CGEventType)NSEventTypeSystemDefined) {
+        @autoreleasepool {
+            NSEvent *auxiliary = [NSEvent eventWithCGEvent:event];
+            // NX_SUBTYPE_AUX_CONTROL_BUTTONS carries brightness/audio key state
+            // in data1, rather than a normal keyboard virtual key code.
+            if (auxiliary && auxiliary.subtype == 8) {
+                input->callback(input->context, 0, type, (uint32_t)auxiliary.data1);
+            }
+        }
     } else {
         input->callback(input->context,
                        (uint16_t)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode),
@@ -49,7 +58,7 @@ void *reeb_input_create(KeyCallback callback, void *context) {
     input->context = context;
     input->loop = (CFRunLoopRef)CFRetain(CFRunLoopGetCurrent());
     CGEventMask mask = CGEventMaskBit(kCGEventKeyDown) | CGEventMaskBit(kCGEventKeyUp)
-        | CGEventMaskBit(kCGEventFlagsChanged);
+        | CGEventMaskBit(kCGEventFlagsChanged) | CGEventMaskBit(NSEventTypeSystemDefined);
     input->tap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap,
                                  kCGEventTapOptionListenOnly, mask, key_event, input);
     if (!input->tap) {

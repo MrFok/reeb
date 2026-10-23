@@ -8,11 +8,19 @@ mechanical keyboard sounds for windows and macOS, built in rust.
 
 choose from over 15 keyboard sound packs and shape your keyboard's tone and feel.
 
-reeb is **free** and uses 80% less memory 
+reeb is **free**, and available for windows, macos, & linux.
+
+## memory usage
+
+![windows idle memory usage: Keeby 502.4 MB; reeb 132.9 MB, 73.5% less resident ram.](assets/benchmarks/memory-comparison.svg)
+
+[data and comparison details](docs/memory-comparison.md).
 
 ## download
 
-download the windows ZIP from this repository's **Releases** page. extract it and open `reeb.exe`. keep the included licenses and notices with the app. no installer or administrator privileges are required.
+[download reeb.exe for windows (x64)](https://github.com/MrFok/reeb/releases/latest/download/reeb.exe)
+
+open `reeb.exe` to start. no installer or administrator privileges are required. also download and retain the [license](https://github.com/MrFok/reeb/releases/latest/download/LICENSE) and [third-party notices](https://github.com/MrFok/reeb/releases/latest/download/reeb-notices.zip) with the app.
 
 ## macOS
 

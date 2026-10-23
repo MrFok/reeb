@@ -32,17 +32,26 @@ impl Events {
             self.shared.reset_visualization();
             return;
         }
-        let Some(scan) = mac_keycodes::scan(code) else {
-            return;
-        };
-        let pressed = match kind {
-            10 => true,
-            11 => false,
-            12 => match mac_keycodes::modifier_pressed(code, flags) {
-                Some(pressed) => pressed,
-                None => return,
-            },
-            _ => return,
+        let (scan, pressed) = if kind == 14 {
+            // The native bridge sends auxiliary data1 in the flags argument.
+            let Some(event) = mac_keycodes::media_key(flags as u32) else {
+                return;
+            };
+            event
+        } else {
+            let Some(scan) = mac_keycodes::scan(code) else {
+                return;
+            };
+            let pressed = match kind {
+                10 => true,
+                11 => false,
+                12 => match mac_keycodes::modifier_pressed(code, flags) {
+                    Some(pressed) => pressed,
+                    None => return,
+                },
+                _ => return,
+            };
+            (scan, pressed)
         };
         if let Some(event) = self.keys.transition(0, scan, pressed) {
             self.shared.push(event);
@@ -126,6 +135,33 @@ impl Drop for GlobalInput {
 mod tests {
     use super::*;
     use crate::mixer::Settings;
+
+    #[test]
+    fn media_keys_reach_the_mixer_once_per_press_and_release() {
+        let shared = Shared::new(&Settings::default());
+        shared.set_visualize(true);
+        let mut events = Events {
+            shared: shared.clone(),
+            keys: KeyState::default(),
+        };
+        // Volume up: repeated downs and stray ups must not duplicate sounds.
+        for data in [0x0a00, 0x0a01, 0x0b00, 0x0b00] {
+            events.receive(0, 14, data);
+        }
+        // A normal F1 press still takes the existing keyboard path.
+        events.receive(122, 10, 0);
+        events.receive(122, 11, 0);
+        let mut actual = Vec::new();
+        shared.take_visual_events(&mut actual);
+        assert_eq!(
+            actual
+                .iter()
+                .map(|e| (e.scan, e.pressed))
+                .collect::<Vec<_>>(),
+            [(0x58, true), (0x58, false), (0x3b, true), (0x3b, false)]
+        );
+        assert_eq!(shared.events.load(Ordering::Relaxed), 4);
+    }
 
     #[test]
     fn mac_events_suppress_repeats_handle_modifiers_and_reset_held_state() {

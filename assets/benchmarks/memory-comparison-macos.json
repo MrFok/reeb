@@ -1,0 +1,103 @@
+{
+  "metric": "phys_footprint",
+  "unit": "bytes",
+  "statistic": "median",
+  "state": "Background idle with app windows closed; existing user preferences unchanged",
+  "hardware": "MacBook Air, Apple M4, 16 GB RAM",
+  "os": "macOS 26.6.2 (25G83)",
+  "sample_times": [
+    "2026-10-22 23:14:25.275-07:00",
+    "2026-10-22 23:14:26.726-07:00",
+    "2026-10-22 23:14:27.726-07:00",
+    "2026-10-22 23:14:28.726-07:00",
+    "2026-10-22 23:14:29.727-07:00",
+    "2026-10-22 23:14:30.727-07:00",
+    "2026-10-22 23:14:31.727-07:00",
+    "2026-10-22 23:14:32.728-07:00",
+    "2026-10-22 23:14:33.727-07:00",
+    "2026-10-22 23:14:34.716-07:00",
+    "2026-10-22 23:14:35.727-07:00",
+    "2026-10-22 23:14:36.721-07:00",
+    "2026-10-22 23:14:37.716-07:00",
+    "2026-10-22 23:14:38.719-07:00",
+    "2026-10-22 23:14:39.716-07:00",
+    "2026-10-22 23:14:40.731-07:00"
+  ],
+  "apps": [
+    {
+      "name": "Keeby",
+      "version": "1.9.0",
+      "binary_sha256": "363e60a97321d7d295998b0ce2a2f9b58c2cebf2c928728ffc8429eb80115c3f",
+      "logo": "assets/benchmarks/keeby-logo.png",
+      "color": "#FB8718",
+      "samples_bytes": [
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584,
+        79004584
+      ]
+    },
+    {
+      "name": "reeb",
+      "version": "0.1.1",
+      "binary_sha256": "8dc2fd82946a52ef9e2e5b323bd6a8acf313b267d84f57930b84518b59fd224c",
+      "logo": "assets/brand/reeb-icon-256.png",
+      "color": "#2865E8",
+      "samples_bytes": [
+        193971208,
+        193971208,
+        193971208,
+        193971208,
+        193971208,
+        193971208,
+        193971208,
+        193971208,
+        193971208,
+        193971208,
+        191628296,
+        193987592,
+        193987592,
+        193987592,
+        193987592,
+        193987592
+      ]
+    }
+  ],
+  "keeby_logo_source": "https://getkeeby.com/keeby-logo.webp",
+  "keeby_logo_source_sha256": "520a58e9d41f6ffa25efdf0302da4591ae09d2e063f00fee04d201c1ca74d839",
+  "window_verification": {
+    "method": "Read-only CoreGraphics window metadata immediately before and after sampling",
+    "before": {
+      "reeb_onscreen_windows": 0,
+      "Keeby_onscreen_surfaces": [
+        {
+          "width": 2,
+          "height": 2,
+          "type": "helper surface; settings window closed"
+        }
+      ]
+    },
+    "after": {
+      "reeb_onscreen_windows": 0,
+      "Keeby_onscreen_surfaces": [
+        {
+          "width": 2,
+          "height": 2,
+          "type": "helper surface; settings window closed"
+        }
+      ]
+    }
+  }
+}

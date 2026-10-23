@@ -1,0 +1,79 @@
+{
+  "platform": "Windows",
+  "reported_on": "2026-10-23",
+  "unit": "MB",
+  "source": {
+    "type": "User-supplied screenshot of another agent\u2019s Windows benchmark",
+    "attachment": "codex-clipboard-1ac68109-b4f5-40f5-8d74-3bfe69c7f752.png",
+    "sha256": "c5c3b78748e0f0577d09bab4aa4b0939ba7cee974dfbfce8028c2dbfabde2492"
+  },
+  "method": {
+    "idle_settle_seconds": 10,
+    "idle_sample_count": 5,
+    "idle_statistic": "median",
+    "typing_key_count": 120,
+    "keeby_build": "1.8.1 .NET/WPF offline copy",
+    "reeb_build": "Rust/egui build from dist; version not supplied",
+    "unit_note": "MB as displayed in the supplied report; underlying byte conversion not supplied"
+  },
+  "apps": [
+    {
+      "name": "Keeby",
+      "logo": "assets/benchmarks/keeby-logo.png",
+      "color": "#FB8718",
+      "id": "keeby"
+    },
+    {
+      "name": "reeb",
+      "logo": "assets/brand/reeb-icon-256.png",
+      "color": "#2865E8",
+      "id": "reeb"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "idle_working_set",
+      "label": "Idle working set",
+      "keeby": 502.4,
+      "reeb": 132.9,
+      "approximate": false
+    },
+    {
+      "id": "idle_private",
+      "label": "Idle private memory",
+      "keeby": 419.1,
+      "reeb": 95.3,
+      "approximate": false
+    },
+    {
+      "id": "peak_working_set",
+      "label": "Peak working set",
+      "keeby": 521.9,
+      "reeb": 158.5,
+      "approximate": false
+    },
+    {
+      "id": "after_typing",
+      "label": "Working set after 120 typed keys",
+      "keeby": 478,
+      "reeb": 127,
+      "approximate": true
+    }
+  ],
+  "additional_readings": {
+    "reeb": {
+      "threads": 36,
+      "handles": 339,
+      "exe_mb": 8.7,
+      "folder_mb": 10.2
+    },
+    "keeby": {
+      "threads": 100,
+      "handles": 967,
+      "folder_mb": 224.8,
+      "files": 1153
+    }
+  },
+  "keeby_logo_source": "https://getkeeby.com/keeby-logo.webp",
+  "keeby_logo_source_sha256": "520a58e9d41f6ffa25efdf0302da4591ae09d2e063f00fee04d201c1ca74d839"
+}
