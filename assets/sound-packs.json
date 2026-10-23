@@ -1,0 +1,1749 @@
+{
+  "conversion": "FFmpeg to mono 44100 Hz PCM16 WAV. Original Cream WAVs preserved. CC0 clips trimmed at -60 dBFS with 2 ms pre-roll and 10 ms tail.",
+  "ffmpeg": "ffmpeg version 8.1-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "sources": {
+    "kbsim.zip": {
+      "url": "https://codeload.github.com/tplai/kbsim/zip/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4",
+      "sha256": "13a85b1d24294c37744856b003f8a8e1e23cb9a186bb24c9fe615af280e615e0"
+    },
+    "unicae.zip": {
+      "url": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+      "sha256": "935eae2fa5c3742eacdd38c4ea0e9047f3887faa0701996498492c256db1b351"
+    },
+    "foxfire-press.mp3": {
+      "url": "https://cdn.freesound.org/previews/570/570754_12873144-hq.mp3",
+      "sha256": "f13c0253b3c90aba3560fe4cbe55646e02d46b4e396ba2406c4e2be03b24c29e"
+    },
+    "foxfire-release.mp3": {
+      "url": "https://cdn.freesound.org/previews/570/570755_12873144-hq.mp3",
+      "sha256": "a66a6563a1f8393e4dbd0cad3cccc14e646839bb1c8074d7685ee1592ee583af"
+    },
+    "CC0-1.0.txt": {
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "macbook-799109.mp3": {
+      "url": "https://cdn.freesound.org/previews/799/799109_5287430-hq.mp3",
+      "sha256": "80295a8701081be6a7151dfa2d4b3bcf5e2d4eb7744ba44c4fe3a283e23bf80a"
+    },
+    "macbook-799110.mp3": {
+      "url": "https://cdn.freesound.org/previews/799/799110_5287430-hq.mp3",
+      "sha256": "efcf632d9fb9a92657dbb21d4d7bccd49587858c1e10d94a3b34e529068bc4c6"
+    },
+    "macbook-799113.mp3": {
+      "url": "https://cdn.freesound.org/previews/799/799113_5287430-hq.mp3",
+      "sha256": "3a5361f8eefe35be73898244e3d72c61a1ed0a533dec0df16880b58b62a07092"
+    }
+  },
+  "packs": [
+    {
+      "id": "cream",
+      "variant": "NovelKeysCream",
+      "name": "NovelKeys Cream",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "cream/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/press/GENERIC_R0.mp3",
+          "source_sha256": "8e3256ddb5a1aed42960a68ba632b3badecce0d60ff3ae61a1ac85e45e343451",
+          "wav_sha256": "ce9ac48c1962ae4417dcf3d0a423bedec27220c61b8fd3b79d2fa4cfc924b7b0"
+        },
+        {
+          "file": "cream/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/press/GENERIC_R1.mp3",
+          "source_sha256": "a45a8f73ce8698705205c80f531e87360737084746b95cb0e47c980e0f86a0b9",
+          "wav_sha256": "5a5158fb9ca6a8d9087dee2b381cb0fc4b5d4d9e8f98015e0efba6669d3b67ae"
+        },
+        {
+          "file": "cream/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/press/GENERIC_R2.mp3",
+          "source_sha256": "9a54ada9209a4ecabd38616421de1a495df04bee3f0ec7b5247e2d8a507ac70f",
+          "wav_sha256": "753452516837c874a8d5c25ff56d9e549b08c65e2dc2be9fe6ab570dbcbb9413"
+        },
+        {
+          "file": "cream/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/press/GENERIC_R3.mp3",
+          "source_sha256": "b7100272f9a80f7016c10da021e45550f3fcd817c21c172236f6e392881d0c93",
+          "wav_sha256": "c3472fd3446277c1676b8ac0dd78f94939caa5efe6ce6f4cc1a02ecf179f1b82"
+        },
+        {
+          "file": "cream/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/press/GENERIC_R4.mp3",
+          "source_sha256": "5472497fae5cd4ca1a70e7861ba990296a708dbd2402a1fab5e1f0f5e8ab92bf",
+          "wav_sha256": "4c07c3a80a3529fd9eca7a9881eae2929420fbb0e4d4964b494b046137855c70"
+        },
+        {
+          "file": "cream/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/release/GENERIC.mp3",
+          "source_sha256": "cbf79b16855fc3461ca1ff9a9e9a4134bcc09d093f7d98c5f6fdb3a2e0a94fad",
+          "wav_sha256": "3bb229969b772e1227a4727e0c55332d96a73c8a39181cba6696023b18c25d90"
+        },
+        {
+          "file": "cream/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/press/SPACE.mp3",
+          "source_sha256": "72f7101819fbd08cef4e2623e41e4979a7923ed15f94467796f92612eda4db7b",
+          "wav_sha256": "5b4e8b9f8d20200f0ccd53cd3b90e6814712af7661d8316756533afa14e2ad9d"
+        },
+        {
+          "file": "cream/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/release/SPACE.mp3",
+          "source_sha256": "5a680831d4d67f8d36d459c0fd1ce00e1e3e2b2126de8481851f847133a3ed91",
+          "wav_sha256": "2c845706f27ba4a430837b12a1ca5e07dcfcff0c39b6f77dbe117b9a834d4cd8"
+        },
+        {
+          "file": "cream/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/press/ENTER.mp3",
+          "source_sha256": "78947470c4f3c7577b2df3dacc3d1ec414545b4b7ffe19fd0fe208bf6787aeb1",
+          "wav_sha256": "f5846f1b8758b3d2749fd78eaeca9cbce1070cbeadeac7a4378ad3b0d712a748"
+        },
+        {
+          "file": "cream/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/release/ENTER.mp3",
+          "source_sha256": "610aa949f67fb72bb86364c11d6a78b5fff75ca8e859dfc2c57b4a3ca728877f",
+          "wav_sha256": "60dbfab5e3d0585e208c460d5ab571f3d3ad7c69d371abebd25d65852212dd8f"
+        },
+        {
+          "file": "cream/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/press/BACKSPACE.mp3",
+          "source_sha256": "cb9512dd65874137874469ae3efaddf37ab2a0b1c66815217cc263a9ba201305",
+          "wav_sha256": "c0dcc65e6cfa2901bf8a37274152ddcad26730b33f2f9b06bb299359cffb2e0a"
+        },
+        {
+          "file": "cream/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/cream/release/BACKSPACE.mp3",
+          "source_sha256": "331c4a71da8fbdb8f7c08362270350fc4fc7dbff5f97b0d2901c5b08c59cd1e7",
+          "wav_sha256": "e6f78b6dcd2bef07347eec6ba209f27b298d2206d4e71be5b47595495f436e31"
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "alpaca",
+      "variant": "Alpaca",
+      "name": "Alpaca",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "alpaca/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/press/GENERIC_R0.mp3",
+          "source_sha256": "a9c99a85e884c567c5480ec1fbb74ec4b3874766f36a994ef327a7f046066e17",
+          "wav_sha256": "6959aa36b6e76ef355e7ebaa7b236741ce85018975f3d3950a18fc58b7215a1a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "alpaca/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/press/GENERIC_R1.mp3",
+          "source_sha256": "4d6ea7c764cd652e2841795630027a6e862fd6a23749f0a48192e8f61c02afe9",
+          "wav_sha256": "f4ebd12ea0702f490e6dedae0b28e5190b6df23bb8ee726daff5033eeabc198b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "alpaca/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/press/GENERIC_R2.mp3",
+          "source_sha256": "ee2d4f2c47c256f11aabbf3284e1ba7f1d70e12ec211b1c7a7c48d58584fbacc",
+          "wav_sha256": "877669c83c39b7d6c27c986f9ceb01f2db5affab82097cdbf7f994389f05d10c",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "alpaca/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/press/GENERIC_R3.mp3",
+          "source_sha256": "57e29520a382bb45a37f76ba38adb7cfd006b760c98c8d7dba2380efa75777d7",
+          "wav_sha256": "43b4bed9b0fc62b3bf461a59a4206c81f98242f8459c78e31e1d2229a0ad368e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "alpaca/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/press/GENERIC_R4.mp3",
+          "source_sha256": "21f13df227df7360dceb168d8b571e3af6cfa310c56a388c068a1b9c0e959775",
+          "wav_sha256": "9564a4bbfb39df88daea7d80afd45fd23e8affa4f0743b1ed302709d64de3f23",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "alpaca/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/release/GENERIC.mp3",
+          "source_sha256": "2585ceae9f0aac668bc67c6c3c5ec11e64cf3f8cd6dc6486d8de31bde6751eb6",
+          "wav_sha256": "14a1ec0f3e5c7de17fcc17f1e8d4a02f66cb4ab417016a52c688489c527d2214",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "alpaca/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/press/SPACE.mp3",
+          "source_sha256": "48e48452cad30f7aeaecebe19a7314e77d7cb28fd471b6c30cf81a899542ea7f",
+          "wav_sha256": "158a94bd18dd48071649a2a740f570829e2ab7cff7fb7fa9dbc054f539741d72",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "alpaca/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/release/SPACE.mp3",
+          "source_sha256": "79a95ffc290b935b00e441bebd81d4a05a863a244bca643254144d919b97aedd",
+          "wav_sha256": "7f44b61c1a3ee8c0b862c08d2c3db97ae26c6510a315e2d34b2763f451fc27b0",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "alpaca/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/press/ENTER.mp3",
+          "source_sha256": "c0dea75600a9fe288bada040ccfcfd60c9ae0e1563c73e59163f073eef68cf75",
+          "wav_sha256": "299d2bb15e80ca02ccd01db557270d8b5889c18b2757dcd333c3104c9984d87b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "alpaca/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/release/ENTER.mp3",
+          "source_sha256": "f18e83f468aaba6daa88ae418e4ad60bf3b0b4be2f56d30901278acf417a3851",
+          "wav_sha256": "2e3ffe03cda395db59fe781de7a7501906f6e5b7fbcaf38693ab1957cfe605f7",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "alpaca/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/press/BACKSPACE.mp3",
+          "source_sha256": "bcbe69320a16639ebbf487615af4844d98c1431f4ed48e3115aae91931244a94",
+          "wav_sha256": "59e22f74ea5b68f4d0fda458c00ad11d861e79192276d161ba38966fd6b46ab2",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "alpaca/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/alpaca/release/BACKSPACE.mp3",
+          "source_sha256": "d06aa6a2dd02a2621a74e14cd23235c142fa31c2ed81ecaac3f09d7084447d44",
+          "wav_sha256": "4e35a11e2c3ee33ec89a593fe5d393ef01100599049e83c2e8bddbba121161bf",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "blackink",
+      "variant": "GateronBlackInk",
+      "name": "Gateron Black Ink",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "blackink/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/press/GENERIC_R0.mp3",
+          "source_sha256": "4a50e78bb7502423f1ef8ba7c6fa235f9bf51f59bb3d5581b666074d7d9cc211",
+          "wav_sha256": "81dccc90d657b8b3032c9915ae72930aa3d0480f598bb5beed1cdb815c80a1d3",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/press/GENERIC_R1.mp3",
+          "source_sha256": "66a3876ba178f41c8cf41333df8c616ac530138830df5349e8945c462a102ead",
+          "wav_sha256": "a7ed394d2a61e558f60a64e96c89c5df9617fb92025174ee9c2ba25ac9413715",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/press/GENERIC_R2.mp3",
+          "source_sha256": "e00b6d20cb56995025632a197124f37f1ef191acd2a562e967712e19505a79be",
+          "wav_sha256": "fdc928025344f16fdac65c9b4424f3e5c020938fa7bfb1092c6553e0b6a7807b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/press/GENERIC_R3.mp3",
+          "source_sha256": "e00b6d20cb56995025632a197124f37f1ef191acd2a562e967712e19505a79be",
+          "wav_sha256": "fdc928025344f16fdac65c9b4424f3e5c020938fa7bfb1092c6553e0b6a7807b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/press/GENERIC_R4.mp3",
+          "source_sha256": "26aebf55daa50e98c254e73b3ea4a824aaa232c33e9187d09aa1441cc1435363",
+          "wav_sha256": "4767bdd46f6263a58aaa3bd8e33a2b435a7df63afc3b3545c3f9b9265eb0ed54",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/release/GENERIC.mp3",
+          "source_sha256": "cc45a0954eb9f3925f66dc874b38954416b96128d3eacd7e76ee0ee211b8c66a",
+          "wav_sha256": "b757f8f0f2dd61f5605ac066a1c0b3c58349eae240c59a3fa6bb55b4e6c7e838",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/press/SPACE.mp3",
+          "source_sha256": "9d8dbd1e65503e67d7dfa384bb3f696624ac641ad589b1f92d6a1ebc1450d3cd",
+          "wav_sha256": "2708f81ffbdee3c2c50be3fdabfaf71522d21ca53ddfe323b3b24f66c5935d06",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/release/SPACE.mp3",
+          "source_sha256": "6a2070501972ae9baaee79bf44d7ede6689c648d3649deefde656ca3df16b996",
+          "wav_sha256": "a3c20903af35d6f21c2a4a6f82dfbf66f25fc770b22554f8af50a7858e50d7e4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/press/ENTER.mp3",
+          "source_sha256": "deabdc71c306a94e684f166f0a90c20dc61483c3d8b5a87a681890195b076d37",
+          "wav_sha256": "dc2baa855303d3b0e1eb4a4c1ad8f2e9a81c481bd970b00eeee6ae2c9f9bfba0",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/release/ENTER.mp3",
+          "source_sha256": "d4b3ebbe0fe7d10849ddaab71893328fda345d3d5b4332c53df4e16f92cc8dd4",
+          "wav_sha256": "6a0d96d7af32d4e2504d6e2f97f38d480d9ac7bb0d6387bb1a8eb24718779401",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/press/BACKSPACE.mp3",
+          "source_sha256": "9e956add9665d10364505517cdfa664af0eac19b748648067092e83e1fbecf6f",
+          "wav_sha256": "336d85e909367d0fedb151604b0566aaed48d4bff14180339cda07712a6f9fa4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "blackink/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/blackink/release/BACKSPACE.mp3",
+          "source_sha256": "74d8fd0811ac70043a81ee7c6f4a3956450c096556ccc86de29b57e5ef723c59",
+          "wav_sha256": "4b86404cb82847ee337e7a97f92a2563973dd4396b1f507ea3e292d27ef3cd9b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "redink",
+      "variant": "GateronRedInk",
+      "name": "Gateron Red Ink",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "redink/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/press/GENERIC_R0.mp3",
+          "source_sha256": "18b28ca6cb7325fa1aa657ae6dcc385dbec1da6cd43049b5010320fed8e98850",
+          "wav_sha256": "32b47349b083569d25593e4aa8fe4e54511771c6491bac43587917081732edc4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "redink/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/press/GENERIC_R1.mp3",
+          "source_sha256": "1628e42cd7d2058b4b8f6f673c775703367f994441c6d9848be8770432bc3c2a",
+          "wav_sha256": "1720571267fc24879c7e4d36012dc9735c6629054aa40894bd5540b1abf97b58",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "redink/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/press/GENERIC_R2.mp3",
+          "source_sha256": "058b2dca1f44764b490ca3616f24c2494d95f6a0268224616c5fd913bcc773bf",
+          "wav_sha256": "dbd1a7053739be3c4bf913e6230e01e586583e8d5bca83db9f277b1ceb8e4836",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "redink/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/press/GENERIC_R3.mp3",
+          "source_sha256": "b717b3a1357ca60ada345bd9d5f3db4805fca8b909c5ae93c27c3c4a56350cd8",
+          "wav_sha256": "39e1c2cbe09f7708b988767b14aee0c361c17754eb15adff669ac64a897a1e09",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "redink/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/press/GENERIC_R4.mp3",
+          "source_sha256": "80884fb1aa62d0c4176a41a0d85575b94dffb2bfc24448d84fdf222b26089179",
+          "wav_sha256": "dac06204dc71bb4340b4e50db6bfe74e0e95e8e4acdfef20d3ef212f684b9e35",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "redink/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/release/GENERIC.mp3",
+          "source_sha256": "4d6b61a1530bb220c298c7257855ab9892146e515cfce8cf7e03cb3bb1fcc4e5",
+          "wav_sha256": "3694c76fdeee33e3cc462091136da4260fc44159049e590c9f8316a22b7e7ca2",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "redink/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/press/SPACE.mp3",
+          "source_sha256": "b9aa24d955e1f6ffc111879aa16dcd0d68d2e3afb5624a9d2541e145cb1220f6",
+          "wav_sha256": "1248016427240565d09f807326665be34b5d75c818bfb58c8b985687c2975b92",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "redink/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/release/SPACE.mp3",
+          "source_sha256": "d2f0e6f959854fd8328e984ed950d0c0ca5b23738cdece35e617e0cde2c505e9",
+          "wav_sha256": "0f927c579f93c95f2d33a667f36a9abcb16b293309102ee1312e0be6715c503d",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "redink/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/press/ENTER.mp3",
+          "source_sha256": "1d696fee93c33e96892cd6f5f3a68e0858c33053830286196d4284173a76d19e",
+          "wav_sha256": "cd01a849ca420bc089d25d8e643a7e7e607539dff73efb76e5d5d6e673d1c011",
+          "trim_start_frames": 0,
+          "trim_end_frame": 5807
+        },
+        {
+          "file": "redink/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/release/ENTER.mp3",
+          "source_sha256": "5bd81905d20614e2ec1772db01b8bd3b3c0c705a583fb1a2a8d1e98b1a83605e",
+          "wav_sha256": "14e73ef91d647177dfbb85ef050db68e21b3de3e1dbb7e4fb5ae78acb979d022",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "redink/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/press/BACKSPACE.mp3",
+          "source_sha256": "282c675e8d86efce6adc018cf57980d0dc63c580c5b219e8a98e89fb320d768b",
+          "wav_sha256": "16a145d0354e46a195b7aa7252a82c8041c16e3e44c80c4a85cc09cdd1202b16",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "redink/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/redink/release/BACKSPACE.mp3",
+          "source_sha256": "6ceeb3c576297439fe9c989ee153787921b3b32102e6353ff76416377970d12d",
+          "wav_sha256": "ed35785f7d5a00b0fe2150c1cd65219a1153fbc40d8563a36d54c74a6379a5f4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "holypanda",
+      "variant": "HolyPanda",
+      "name": "Holy Panda",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "holypanda/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/press/GENERIC_R0.mp3",
+          "source_sha256": "79b2811f3061c406ac9dcf802ae83d68f5fac78f8ed588a515e2550d2fcd05df",
+          "wav_sha256": "c3a68576f18a52faeb5499e45001096e34141afdc8b00e6665dbdc3f7eb8f904",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "holypanda/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/press/GENERIC_R1.mp3",
+          "source_sha256": "cb9aefe55a81c48d6680d2ab8960220c20439e31ba1e32fd570106ed15c7fd40",
+          "wav_sha256": "1d3d1ddbc66befeb71587b65d9d74768afb961dd80a4fa32be87582d893c9819",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "holypanda/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/press/GENERIC_R2.mp3",
+          "source_sha256": "d346d76ef4c32f09be58556ccce843d7a88199214f9ebfdbf8b95226faf7ba3e",
+          "wav_sha256": "3ffecc8fa55992848e0fdef6c201c265084ca99686991a7b6263ef281c90c0cd",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "holypanda/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/press/GENERIC_R3.mp3",
+          "source_sha256": "4141524713fc19942166866c093777351f6f122acb9d79c7503981a5b906c7dc",
+          "wav_sha256": "c06c0f2f449e7e1ad864c39ba2d6321db63f0aaaf3a737c775a9073b44423bcd",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "holypanda/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/press/GENERIC_R4.mp3",
+          "source_sha256": "60ac51060cc0f1880016be2dffa05d3e3cf928290df37be998fb081bdf1ea66f",
+          "wav_sha256": "8a9140cd731ebe3e78841c1077329778b7c28bfe269414a37b99a19b89e3c1b8",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "holypanda/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/release/GENERIC.mp3",
+          "source_sha256": "9b0859c4ccb2adabdd9e9447aa0684f3ba12f59551aaf1a4d867d458d4ca56b1",
+          "wav_sha256": "8838f25786af0289ee42b68a97f1ed778089b8f84dfe23e12ead5cad04640cdb",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "holypanda/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/press/SPACE.mp3",
+          "source_sha256": "bcba046d707877095ff2fc6d031091348515f9a6f724ee73c029831d105b71a6",
+          "wav_sha256": "a42f26be34ec0836236e14cf76d83a9a12fb093223f3e1e1edfd71d84fa4443a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 13871
+        },
+        {
+          "file": "holypanda/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/release/SPACE.mp3",
+          "source_sha256": "980bfca97b89f2dc114f23cdb440c956a62137430d5e22682e011d16d43f2153",
+          "wav_sha256": "37bdf877cbc967758b32b3baad55bd2e15522eab87d19fb0945d1b56a6706472",
+          "trim_start_frames": 0,
+          "trim_end_frame": 1199
+        },
+        {
+          "file": "holypanda/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/press/ENTER.mp3",
+          "source_sha256": "56d78f9b2b662ddd07255e2e130410536a0e877bdc639fef7e205edfd73558a1",
+          "wav_sha256": "bf4ee63fa89f6a7c21c5b6cb96715806be52bd4b3af23efc2875ee1b74def077",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "holypanda/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/release/ENTER.mp3",
+          "source_sha256": "be0f86e85d17dce47a607960c37eb54240ff1648b8eb54b6293cb8beb38c17ed",
+          "wav_sha256": "f85b16202d6adc15f5b4f3840dfbc22d485e5aa670b6a2a883d22e41333c4308",
+          "trim_start_frames": 0,
+          "trim_end_frame": 1199
+        },
+        {
+          "file": "holypanda/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/press/BACKSPACE.mp3",
+          "source_sha256": "293a4fb1ab19605348018c2e8fea805ef9454963aa69e2d26a06ed7217636889",
+          "wav_sha256": "a641ec9bbf86908f4bda29794fb870429525fc3450765eae2e453d12ea03534f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "holypanda/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/holypanda/release/BACKSPACE.mp3",
+          "source_sha256": "dd092c78c99322f3bf9c45c2095a91e6a91450889f2a0976fb9858397b360c06",
+          "wav_sha256": "c0ea61f76292e0554a710b6e2a6a0f40d60c0f4cfe727f1aef0b7e1431a5a16d",
+          "trim_start_frames": 0,
+          "trim_end_frame": 2351
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "mxblack",
+      "variant": "CherryMxBlack",
+      "name": "Cherry MX Black",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "mxblack/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/press/GENERIC_R0.mp3",
+          "source_sha256": "710bfacdfb8012c1a6012e6872e8d0688c7413dbc697724b1b77976bcf964948",
+          "wav_sha256": "5023706ccf1fef2faa460f7d76c3495db3d215b526af0e68e1b233d548405bc0",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblack/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/press/GENERIC_R1.mp3",
+          "source_sha256": "51195ef4d181184b3a6dd36d4b74f1f6f678d233af95467ae3ecd5f6927b5b32",
+          "wav_sha256": "541d18df7733dc5aed19cd23fc82d951914e13a4a5bba89f9a555b474f3f9485",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblack/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/press/GENERIC_R2.mp3",
+          "source_sha256": "a908202ed34f3f6bf5ee5bd4cd66a8b52dc75af0eb6108698f7bbb69c07dc4a0",
+          "wav_sha256": "864b6e6ece0da53afddf3720dcf397ce814a880a2bc4f459edfc89a844e9b4fd",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblack/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/press/GENERIC_R3.mp3",
+          "source_sha256": "e1af27d6895073a4ff6fda58ea952770a57ec7eaf59ab1b9aef417d90502c73f",
+          "wav_sha256": "0fbc9cf0d40219d1801b8115a4cea7f84e0ca8444c9329d277724463f4bc7972",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblack/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/press/GENERIC_R4.mp3",
+          "source_sha256": "ad4ed6ae1a655d5b21e591f8b99a8d58eaf09e0864040e2892568fce1eb18fe0",
+          "wav_sha256": "9d387c8ebb363c5995c6b11057925ee881db3303d9e9937e6225ce5126edc0ef",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblack/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/release/GENERIC.mp3",
+          "source_sha256": "a8e869c652f5410669d3e52070d36941177cac84e8289121d5cc91fe20857fd3",
+          "wav_sha256": "1cb556673179e27f87d05cd1a1f58c49fd4aefe963488606aa3e582089453893",
+          "trim_start_frames": 0,
+          "trim_end_frame": 2351
+        },
+        {
+          "file": "mxblack/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/press/SPACE.mp3",
+          "source_sha256": "f3207500a27cb457105ec259d9dc495b24f88f233191e806c3074303f288d27f",
+          "wav_sha256": "539c299057a7f60262ea778a4232e219c5121a8a80026f56db137f4f26e8f8a4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxblack/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/release/SPACE.mp3",
+          "source_sha256": "f785078c5bad8080a4649ae1dc632b97e48b180fa32eb040788a4aec702fbe5b",
+          "wav_sha256": "66400e69fbdd739a27e6afa3dff4b50dc305422104f01ad2251c298e15b9143b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxblack/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/press/ENTER.mp3",
+          "source_sha256": "166096b6cd8522dc72c3664a6ac54067b70ad561f8f52a2644623b4283ecdc8b",
+          "wav_sha256": "16605c2363456a3249cc6bc7b378c99aa0277b6f8ffc4dbc4b414901584f2eb3",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxblack/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/release/ENTER.mp3",
+          "source_sha256": "d3143442530392eeb391714ce892656472d797c0528beb4d6d8e5609fe904428",
+          "wav_sha256": "40be8e0a430504d06683a28ddca21878bbc79353cb4328ae79f7f960f2e81622",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblack/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/press/BACKSPACE.mp3",
+          "source_sha256": "c12a43f97c8fcd4ff1c5020ed0d3afb2a1f518c1d8e346f097ad3f0ea6f80c1b",
+          "wav_sha256": "2aad245368bae178179e66be40efe305a15313ede8b65cfde3efd03aafb4ca39",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblack/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblack/release/BACKSPACE.mp3",
+          "source_sha256": "51789d22ed2091cc9b85c6fea37b56b49f8c9f6663948cdd6a92f822e6bd931e",
+          "wav_sha256": "75b8fadaebe40490e00076cb32c0dfe4d127f7d83ea9b1d17d95cb056ff95d32",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "mxblue",
+      "variant": "CherryMxBlue",
+      "name": "Cherry MX Blue",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "mxblue/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblue/press/GENERIC_R0.mp3",
+          "source_sha256": "329a2cb041186579180cfd6c367b4680e82677689788210a96461ee43dc47115",
+          "wav_sha256": "c83580ad99ed02c9f3c6d5b613a4ee2464dd9bac3732dd6a5f1069e81b921c8e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblue/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblue/press/GENERIC_R1.mp3",
+          "source_sha256": "01baccca3a0b9a913063241c0eaade18d8fd6263d507fbfc4fdfa3a5a526389a",
+          "wav_sha256": "9b2d5e6a08b76bfad79923ec89690c255e4aaf2db0dce41a7a21742f9489e1b0",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblue/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblue/press/GENERIC_R2.mp3",
+          "source_sha256": "9460f5ccd67aa5c01a125c26533fdbbcf1ce064bb049534bd7e306695fa845b4",
+          "wav_sha256": "d68a43e2dfe2196ebe6feaafed62af4f1b9e2f42fa34c37867c0518ff6438d0c",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblue/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblue/press/GENERIC_R3.mp3",
+          "source_sha256": "4193733efad92e044c6234811219c63075a7c547b6219fdc1f9c915965ba8269",
+          "wav_sha256": "a36665d49d669effdf7cf2045bb9a4ee119a0e33d2c1ee944327fae1d1b5cb48",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblue/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblue/press/GENERIC_R4.mp3",
+          "source_sha256": "7a98c842c9f2eb650e4d8878cb9ba08428450b190c257d61d5a7dcfaa052d1b3",
+          "wav_sha256": "f5e8e66170265b939250c164124a07bf99627da303c6a395a4bb1320d2dd25f5",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxblue/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxblue/release/GENERIC.mp3",
+          "source_sha256": "243e8300cbe131678b8b4d1fd44e8aaa884636c6799af67b379408a96a9e5697",
+          "wav_sha256": "74f414464c08a434b37f59b8bd94e7180096f02549a2791a5cc8b147e8120d28",
+          "trim_start_frames": 0,
+          "trim_end_frame": 2351
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "mxbrown",
+      "variant": "CherryMxBrown",
+      "name": "Cherry MX Brown",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "mxbrown/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/press/GENERIC_R0.mp3",
+          "source_sha256": "3ac7a03472bb63ae34f077b7f50d85adf5f1d4f93565c6c6608b23be7eca10ca",
+          "wav_sha256": "b9e141de75db2afe0925abf636a99aa063f555871051db6e322b040e6975712c",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxbrown/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/press/GENERIC_R1.mp3",
+          "source_sha256": "9fb249de0ef96cb08602f47b53161338bc90a9d094a9c9b2ca33c513d5ca10a8",
+          "wav_sha256": "66b5c13f4d9fa33900371e7867bfeb190886b3484543706f1e6e30601cb205c5",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxbrown/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/press/GENERIC_R2.mp3",
+          "source_sha256": "227363367cf62d93b73994cde9124956aecd8bf44c63167909c1079ceae37688",
+          "wav_sha256": "205c32576dc26d17f470177d8e3578f7d0a236c194e4b57f11f7a47952eb891c",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxbrown/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/press/GENERIC_R3.mp3",
+          "source_sha256": "4eebb28d97138a226223532321f0351f993f1d21d804bd0f26af1d7e7f8309ec",
+          "wav_sha256": "eb7d59303e71fcbbb4bcdd981e0361577def14bce965e30c2155917a56d81c1f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxbrown/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/press/GENERIC_R4.mp3",
+          "source_sha256": "e4f7f0413ceff5892b130808efee2d50734a72f3babdcb2e238761a749fa99c6",
+          "wav_sha256": "b1e2a7a4f811aba2725a62b4bac9a5542a7e11f5f6eaaa298731c6efd6784d58",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxbrown/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/release/GENERIC.mp3",
+          "source_sha256": "5aaedc220e66eeda90adf64e519aa11d4ba0e3df9d8579ffb05af47dc0adbaf8",
+          "wav_sha256": "68f6f2152199c9c6c5c8cd8132e158c8f343b40bcdfc5347ceff9e1f3c990f02",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "mxbrown/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/press/SPACE.mp3",
+          "source_sha256": "c29e11248a5cbfb845628174803ea240701a63d17770ea006defad2d48263017",
+          "wav_sha256": "71c8d1ef47acb0f40088ca933858032ab3c8b25698cbd46cd8681e8d5f0611c5",
+          "trim_start_frames": 0,
+          "trim_end_frame": 2351
+        },
+        {
+          "file": "mxbrown/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/release/SPACE.mp3",
+          "source_sha256": "eaf160ffea29918f08cc267033accdcfa6fe99992149dcf3de6f599ba66c63f7",
+          "wav_sha256": "707e872dbf60f79d65351fd0325e99a85d347bf9836c81f0ef757d89a41c894e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 2351
+        },
+        {
+          "file": "mxbrown/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/press/ENTER.mp3",
+          "source_sha256": "870ac91262bf77ae898dad217bf033941634b8b162a2fa4a190416abd7aabfb7",
+          "wav_sha256": "2450d74c469d5495ae94750f5a605040c9912972752ff71dba2dad7324f88044",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxbrown/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/release/ENTER.mp3",
+          "source_sha256": "c3e4a000ef5540f485d760a5c4c06adf8d38d9814989302b8d5b42eab472dc4b",
+          "wav_sha256": "a6b2cf194979688773e5f927a64bd45538a1a6f5d45bc9d9153c550cd70e7c7a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10415
+        },
+        {
+          "file": "mxbrown/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/press/BACKSPACE.mp3",
+          "source_sha256": "8607e53ec586692caee08e61d6fa241fce7c7ef9dac219de92b632b90678a972",
+          "wav_sha256": "1486f2c981f6f00fe11b83601b49669811bf5d1e9d617bb4cec20259c4015211",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "mxbrown/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/mxbrown/release/BACKSPACE.mp3",
+          "source_sha256": "6a1cda06206811bd4ec3e17d49dfbb4f5128068d0994e7e6c001e2e13c90a4ae",
+          "wav_sha256": "74829e1e988136282fa709decc692093da45005c0ea5b244602a12b19e050997",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "boxnavy",
+      "variant": "KailhBoxNavy",
+      "name": "Kailh Box Navy",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "boxnavy/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/press/GENERIC_R0.mp3",
+          "source_sha256": "6b5bc813e28e3a6033d6d1f78708beddfa0316c34a28931a331e0d48f8881384",
+          "wav_sha256": "0d9c709fbc493a00db2d34542d83b37e13c44e902b171ec911d051805d40cfc0",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "boxnavy/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/press/GENERIC_R1.mp3",
+          "source_sha256": "aa06cf30fd1d07ca596b6c121197cb7e1f87e863ba154b871fb55ca14409c00b",
+          "wav_sha256": "b7b0478e0bda5e79f920e333a1d82bbf6bc72cfa58c1747aee22845a38c2ec8e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "boxnavy/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/press/GENERIC_R2.mp3",
+          "source_sha256": "46f158f5fe4d42d92bb65da292a789cbdfd547512f9a40da52bbf693fe861d8f",
+          "wav_sha256": "857c38a89a7ff4679a2bf4976b95575b0d60590ddcadab39698680272f44e208",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "boxnavy/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/press/GENERIC_R3.mp3",
+          "source_sha256": "e04c92c2a828ca3cb41fd8b00b885bb9774fb66e91bee55d1e8826924dadbed6",
+          "wav_sha256": "12bd8ba9ae42684e4ea1bf19bedc25666aa023c2c00edcdb21bc7dca697b2077",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "boxnavy/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/press/GENERIC_R4.mp3",
+          "source_sha256": "1767006a74c888863e85524e87dd28e212ab6804b9d3e86525c763b272af8214",
+          "wav_sha256": "5096fbce3f828e79b151a411b579102ba8c6bccc9e67fcefa698f02e11b22f62",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "boxnavy/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/release/GENERIC.mp3",
+          "source_sha256": "960426e10dd1a9013fe86b8d853428eb75fca3f201c5b0a02bd8301b7e334d22",
+          "wav_sha256": "5aad06ba5dd491d432f788b2698ddee2c4fc683fb241a9db3d0aca226509297d",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "boxnavy/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/press/SPACE.mp3",
+          "source_sha256": "d0fd3687fc20e6f5c41230faab49c357d6424763223a650b5f9ec51a4186314f",
+          "wav_sha256": "c6a21ee5b09e4f12b8efeaea41eeb23ba831437d38821adeabb35023ff043bbf",
+          "trim_start_frames": 0,
+          "trim_end_frame": 5807
+        },
+        {
+          "file": "boxnavy/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/release/SPACE.mp3",
+          "source_sha256": "ac626b52ea9e6003c2d49e131275aacf1e4d577c46f1bd3978d39f146acad78e",
+          "wav_sha256": "21098815aaa97b45b52a252f20460b0b79cd3322be6bc534d84342c91273e24c",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "boxnavy/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/press/ENTER.mp3",
+          "source_sha256": "4af30083ecba8f88b0a4899a245221d91fbc0e83672020b30ebf5be3134916bb",
+          "wav_sha256": "e46eff96816b8590257ed569d7727b0abc280f707e26ed4ae60db5c3247e059b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "boxnavy/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/release/ENTER.mp3",
+          "source_sha256": "85120e10bbf88ec47fc11558122860892d4220e6cc9d19bba0b0a4cb184e1347",
+          "wav_sha256": "68d22a10dc6053ffc4cffc0a3ed82f2971db796fb9c892590fd16f9e4cbb9e3f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "boxnavy/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/press/BACKSPACE.mp3",
+          "source_sha256": "55ea605789316cf93a38a8ee91a58d80f87bdc3660669fb0b251f7f8632578c3",
+          "wav_sha256": "8b281ff502308cd01b4c85f8db18fc8eacf475bd9958c83f0f72976d4fccfb0e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 5807
+        },
+        {
+          "file": "boxnavy/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/boxnavy/release/BACKSPACE.mp3",
+          "source_sha256": "f353c9053eb474eb193d1fd4aa61ee6d77ba12020923d3153f4a5b1cc34678a6",
+          "wav_sha256": "474ddfe25122e6663446d0ef7a703e3df8c265cd76fbaf6f55408099aae8097b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 9263
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "buckling",
+      "variant": "BucklingSpring",
+      "name": "Buckling Spring",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "buckling/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/press/GENERIC_R0.mp3",
+          "source_sha256": "b97d221980d81247f2831d4cc343d78d57652f2fabf38dc857802f1bc2829874",
+          "wav_sha256": "faeb79641bb6ac515d3c22318bdcc8907ecc55ebbd0cfcf979523f81a37970ed",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "buckling/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/press/GENERIC_R1.mp3",
+          "source_sha256": "ff28ea62d1868f56781efc1eb9dd4cdc3198bdbb629875e18b5b7635d82d20d7",
+          "wav_sha256": "213a14333eb02c8853538696187423cbe68c14ce41cad643578cd3c11c76006a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "buckling/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/press/GENERIC_R2.mp3",
+          "source_sha256": "c3cb73b029aee81bc661227de4fabf7e245e4dbddd76ec3657c6e30c257b2212",
+          "wav_sha256": "1e447f53baccaca06e8ef10681dc9216c9f45a2bb6b51b12b198cb1caf0849dc",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "buckling/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/press/GENERIC_R3.mp3",
+          "source_sha256": "144b197ea8bb2571ea33edb1b212f6c51555603de4bcbee1be756d07b66fd8fa",
+          "wav_sha256": "d1a927eeac13474d8b76343ae846076db0c1a652e7390d3483aaa8e2882db9ed",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "buckling/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/press/GENERIC_R4.mp3",
+          "source_sha256": "ea1b98b076e812654ca57de75fa45ce75d7aa4564c3ce10cf57050495978fde4",
+          "wav_sha256": "0fa8bc9da0c3775af06959743edace5acbdf5ef51bdf01fd4fbfd056bc4418dc",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "buckling/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/release/GENERIC.mp3",
+          "source_sha256": "87dcaa7624962a6fc43004772544420e7da243bdf4766d541e779557a9a08f38",
+          "wav_sha256": "eb454b662405874c6cca89447fbd47b0a346e5890de9b65ff79ce50fff2676d8",
+          "trim_start_frames": 0,
+          "trim_end_frame": 5807
+        },
+        {
+          "file": "buckling/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/press/SPACE.mp3",
+          "source_sha256": "ed0ffe61be4c95bc2402e4b861d3ee00bfbae878a76d1ab114d8cf7dd712f827",
+          "wav_sha256": "bb4b955cd734ae85aeb1db2f1046da647d3d829d1be5832ad1fc475be3d5511e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "buckling/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/release/SPACE.mp3",
+          "source_sha256": "db003861bf8389e4db5f2aed43cef66fb2f8d4083e549d9a3d6e0cde48ebe8bc",
+          "wav_sha256": "9a49ed224b85dc1d6701fc182d03dd0e574b0b595aebe3c97a9ef933b0b10b36",
+          "trim_start_frames": 0,
+          "trim_end_frame": 5807
+        },
+        {
+          "file": "buckling/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/press/ENTER.mp3",
+          "source_sha256": "a37cb75240d81c9d5e28870da3bd450f6fff9ae131f9f9f89fd63ef50c056b98",
+          "wav_sha256": "a99506624ca50f5db8948264fbde214dfec4a33ddda86fe8d14e93678092b602",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "buckling/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/release/ENTER.mp3",
+          "source_sha256": "c2f5cde84b881c400052fc2048c0b0afa4c3ed1fc9dc0887793d6af37cf6e0e8",
+          "wav_sha256": "84aacf327752ea1c495f49f1066629b48dd3608d86f6c151500a820f4a9b5df3",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "buckling/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/press/BACKSPACE.mp3",
+          "source_sha256": "466e5550d7493b48480e9852b2ba282c962294512a0df359d5f4d92c2abea3ae",
+          "wav_sha256": "d2fdf791f4e13f89251826b15659fa59867a576f447a83a0a0ddece35ba03f90",
+          "trim_start_frames": 0,
+          "trim_end_frame": 5807
+        },
+        {
+          "file": "buckling/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/buckling/release/BACKSPACE.mp3",
+          "source_sha256": "e17a16ff051c7f725fff488d91013dc45683125926db91ed55e63a4a87902157",
+          "wav_sha256": "4c338596d762e7c5fadd34d181271589804ff387f03b9a68fa6c6779bd509468",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "bluealps",
+      "variant": "BlueAlps",
+      "name": "SKCM Blue Alps",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "bluealps/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/press/GENERIC_R0.mp3",
+          "source_sha256": "89e002b10aae3a77aac88598e820cf166e9b6dd412a54055d24de49cedcbfb17",
+          "wav_sha256": "4c8ad7bedde0b3607fa9745418001435ab40a1b6912cc5bad51d80881d197d63",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "bluealps/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/press/GENERIC_R1.mp3",
+          "source_sha256": "45664b5e43be09c31f321738735b13a9e3b7c4f2d08e47a41b8ee81c136a39b2",
+          "wav_sha256": "6cc58181944deb5c0fe889165312f23640bbaca06a9940a1f1adca366410bfc8",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "bluealps/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/press/GENERIC_R2.mp3",
+          "source_sha256": "0669b6b0fce41ec679ad52c412dc603f2f03c8e8178c979ab694db1dd093daf9",
+          "wav_sha256": "264ff3275f5dd22a635dc490179a73ef7c7801a9149688c2765a29ddeda74f5a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "bluealps/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/press/GENERIC_R3.mp3",
+          "source_sha256": "c799c08596894a1b6aa7887147576a177a87296ada4928c0b7593682e0a4d448",
+          "wav_sha256": "056a306fb3e503503008b015b653712e8e50b36674c7840adc1cd122e2c99fa9",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "bluealps/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/press/GENERIC_R4.mp3",
+          "source_sha256": "04f02f87d6e9b53a2001832668fb1b985eb9a6573475e8c4608f5a51b4930eb0",
+          "wav_sha256": "56c0208c7b9d9eadb9829f24db2a0d36d55866aede3df838946515b86eeff298",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "bluealps/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/release/GENERIC.mp3",
+          "source_sha256": "a0c45cad739e1db02e2dbe9ace2207da233f8860d5af6059c3c92b74231ff83a",
+          "wav_sha256": "674e806d8814714dedfa08380d34ab252f19f5d4744d440ee334fe6de72bb090",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "bluealps/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/press/SPACE.mp3",
+          "source_sha256": "71ade35f9efda36fd9364e505d842955e49943c1e3bd806d2458ce7eb1b8dfe4",
+          "wav_sha256": "53de549fdbeb1e4b4af1232745cee01205068c0c950937f86d75784c29865dbf",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "bluealps/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/release/SPACE.mp3",
+          "source_sha256": "1af77aedf4d2b4a2b71501dc0db6a08bb9482e5383c00f7a6ffd79987d213c12",
+          "wav_sha256": "e9bb8623ca761207a3a1dc073d703d08b9f70f3c6307ef0e42171cde19097b3a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "bluealps/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/press/ENTER.mp3",
+          "source_sha256": "b308519bc66c53b09c118ea7325cf4dafd1232f8a66d0d8395d7bf077f4217e6",
+          "wav_sha256": "3deb6e8a8723f7b84781025d6850cc87e58489424aa0e04bce3a0a72613df5f3",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "bluealps/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/release/ENTER.mp3",
+          "source_sha256": "7c39eb92bca0242c19b76fcada685887d0665e0805b33bcae467834ddce2c83a",
+          "wav_sha256": "b1776413f506076166dcd0dc21264aa50ed4306b63dbbfe5a124f6b8027967f5",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "bluealps/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/press/BACKSPACE.mp3",
+          "source_sha256": "3b05076b2a4d9b1b6403b8bc1a8081593c07a68d16ea0fbf5f46fd1bb07d7ca9",
+          "wav_sha256": "ad1362fec520e28a6cc63e2033f7a51a76dce4b10e5b691749b4fbceacc165ea",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "bluealps/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/bluealps/release/BACKSPACE.mp3",
+          "source_sha256": "5766598d9b2c8fbde22fc830657b8c890b6a5a21bd0b2b129ded9052e8e6506c",
+          "wav_sha256": "270910a99e9397f87837153becbe4cb27e5fa8bb7a470945bb502553a66c1237",
+          "trim_start_frames": 0,
+          "trim_end_frame": 5807
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "topre",
+      "variant": "Topre",
+      "name": "Topre",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "topre/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/press/GENERIC_R0.mp3",
+          "source_sha256": "a61130c11937d615179cdda1dc31497ed64138dae1dc931c331be74a82c62451",
+          "wav_sha256": "59e3c3f8ae12b49e8dcee97f1490b2b29a59120beaf18eb05a4c7f4bb2abb7d4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "topre/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/press/GENERIC_R1.mp3",
+          "source_sha256": "7848f347aa76b850095ff03f98e04c325de28d6d30ed24b4451bd4bfcd73ecea",
+          "wav_sha256": "eaa4abd7d4700a889d80b468f746b1e7b467e23bbbe618567aa52652250c3e9f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "topre/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/press/GENERIC_R2.mp3",
+          "source_sha256": "3009e146a2f17e9eb98faf34050cf534bed24be2d2295b69a0cff28e5bc43f77",
+          "wav_sha256": "5d85aff1316b6fc4554797e93f700624f179ffdaa20eb238e27c77d4af83c8e9",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "topre/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/press/GENERIC_R3.mp3",
+          "source_sha256": "f5b3b49d4f85c228b4be3fd1cf9c11a7aebee005a127b16d3cbd81dba9bb8003",
+          "wav_sha256": "27fc674bd725481b621a454e73682a47af6239bddb08f188db96dadd182e9fe3",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "topre/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/press/GENERIC_R4.mp3",
+          "source_sha256": "6553b1182524edca8342dcdbc7a92eab9c5791bb9cf516c5494629d672425164",
+          "wav_sha256": "47551dabbd597d446e56dc779bc66d9d0af6cdf6fe39a79759da96ed989e2eb4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 6959
+        },
+        {
+          "file": "topre/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/release/GENERIC.mp3",
+          "source_sha256": "0e8030c4e3c32bde47ec4873d30e2700611cea71de0ad9c5f0c48e5200b8a3cd",
+          "wav_sha256": "fc5bbbdba3978985eeeb46512520c4078edd8c77c4f8fdb949a5a93b8787cbee",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "topre/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/press/SPACE.mp3",
+          "source_sha256": "1fd27ffd614b7f18205df601b0daf339d4dd5217663165a99667625a6c0b0311",
+          "wav_sha256": "fcaaf1665529145e39b0aaeab66a0460b2a8772fb3063bda64462e20b481110f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "topre/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/release/SPACE.mp3",
+          "source_sha256": "07f21da1b02cf10b8ffe35f5d14bcc94feb57c9bc2a241ace3f429b443fbbe3a",
+          "wav_sha256": "94453cdae65bf897107d40c0a174119ffafea5cff89cacfdb941e9eecd5dd6ba",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "topre/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/press/ENTER.mp3",
+          "source_sha256": "ebc1ae71ea8097cdde7e6e57732a24761cfaf94ed78a66e3da83d2ab1df0054d",
+          "wav_sha256": "6c33feb804212f5bcd19239f8386b7d58b7fa2265d10b2d4436bc83a6b40a54f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "topre/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/release/ENTER.mp3",
+          "source_sha256": "17eb8334ed0907eec01e83ca4ab9f9ad7d9fe7bf4d273e95c747d272b6a568d8",
+          "wav_sha256": "8aa7778d1e3eae60ca268ff6890956d807499c4180864a24052777f009063dc8",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "topre/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/press/BACKSPACE.mp3",
+          "source_sha256": "00db5edca14dc41ca89ed22ffc063d2bb30d5a5dfb829b014cc1fdfa88891c82",
+          "wav_sha256": "96f8f8226f513359d180625e0696dfcd4bc6430fe17f64a4695b2bf55aaed4bd",
+          "trim_start_frames": 0,
+          "trim_end_frame": 5807
+        },
+        {
+          "file": "topre/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/topre/release/BACKSPACE.mp3",
+          "source_sha256": "a52a3b72613388739bdc46b5ed18960382465dcadded4501a755ab478eb4be91",
+          "wav_sha256": "b55eb04cc845a7777295bc223888f4288c347b1c43e4af352a62a8458d387a95",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "turquoise",
+      "variant": "TurquoiseTealios",
+      "name": "Turquoise Tealios",
+      "license": "MIT",
+      "author": "Thomas Lai",
+      "files": [
+        {
+          "file": "turquoise/press-generic_r0.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/press/GENERIC_R0.mp3",
+          "source_sha256": "4f08f0862685d5b3f536daefcfa98c9cccae14df4831274cdc415aa8876df330",
+          "wav_sha256": "ec82e61e0f039323bd954daf3f28a920127eab8b5746dc4325b7ff6f1ef40fab",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "turquoise/press-generic_r1.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/press/GENERIC_R1.mp3",
+          "source_sha256": "5e4d3bdd956760fd6831519549302db42aacf5b7abf162a6271b3032898276b3",
+          "wav_sha256": "66970f44a0853b46e565b77d1738dbf497441a84e3bcc9409a59ac38889ca009",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "turquoise/press-generic_r2.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/press/GENERIC_R2.mp3",
+          "source_sha256": "06ab4c0ffc7f37ed08a4d1abd5ad583b997a81427d52a0099e3f41cc5b7d6509",
+          "wav_sha256": "dcf717831f44f79a509c0e60276ecff81adc9b9903d4e938e19faa2f741c29d4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "turquoise/press-generic_r3.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/press/GENERIC_R3.mp3",
+          "source_sha256": "b310eaff87450c28415459075c60dd1f817d84d38bf1e5602311edc072f8ba09",
+          "wav_sha256": "ade9c0be575604b1b70f67fef0f948e6b883dfcb5c2942bd06924976abd8ae5e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "turquoise/press-generic_r4.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/press/GENERIC_R4.mp3",
+          "source_sha256": "a745cc55cc453c74f0f372ccce82dd9d2823ce96ff31d36a4bed13147858ccd4",
+          "wav_sha256": "46749c0076eedd3b357d7b3b2e6180d2839b1b7a7f7d080c447f9eb8bd983945",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "turquoise/release-generic.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/release/GENERIC.mp3",
+          "source_sha256": "086fbb780ab02f2dd214d8718b9a2420097be58af3a47ac5aa592873bf075817",
+          "wav_sha256": "ff87114b3ffebfb4fc118cf80cb7c5366791261840436debc3cf63c22c671910",
+          "trim_start_frames": 0,
+          "trim_end_frame": 2351
+        },
+        {
+          "file": "turquoise/press-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/press/SPACE.mp3",
+          "source_sha256": "cc122ddcfb66fb1af5b2f6e42c1ac8a98d2a21b202ad270435df797ef9e16ef3",
+          "wav_sha256": "3d9dd5ba461a07f4e66f51ed1a2c247d6d01b0a5a1e5539d16da95d87053ed30",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "turquoise/release-space.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/release/SPACE.mp3",
+          "source_sha256": "f08384868eadc73475bb3dc7a5cf6175f8a249d3dfbed9b5f3672319f5492833",
+          "wav_sha256": "a27c72548fafd12ecb8dbd770157b333e3629f70531fa8e8d2774ae9b849016f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 1199
+        },
+        {
+          "file": "turquoise/press-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/press/ENTER.mp3",
+          "source_sha256": "de635098bee3f1145491dbd667412a276b320e8183bf28b5626aab2fb50fd985",
+          "wav_sha256": "1c852b460f2bf4a2d0aec3ef3ed5aa584c4445ed29b0ac57532d0b8e5b51034c",
+          "trim_start_frames": 0,
+          "trim_end_frame": 4655
+        },
+        {
+          "file": "turquoise/release-enter.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/release/ENTER.mp3",
+          "source_sha256": "7a916fca4c1a27dd8a616f74eaabc97640c0f580bbf4b99b07200ff109f8142b",
+          "wav_sha256": "470b472e8244ea90827cf71b7dc00d2bdad7d9925de0d599c6a91e6d65012209",
+          "trim_start_frames": 0,
+          "trim_end_frame": 2351
+        },
+        {
+          "file": "turquoise/press-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/press/BACKSPACE.mp3",
+          "source_sha256": "c1c81bc9abf87914467220d556d985c3b740d86ff1e865d1f26bdd29d19e2f87",
+          "wav_sha256": "35389ac08eec9ba7e581ca44ebd8add606d6d6a5858706658995377d8288c31a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 3503
+        },
+        {
+          "file": "turquoise/release-backspace.wav",
+          "source": "https://raw.githubusercontent.com/tplai/kbsim/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/src/assets/audio/turquoise/release/BACKSPACE.mp3",
+          "source_sha256": "2415a4c37fab40e12bcc715bac69313299dd30fc731021513a9c599c9cd827ab",
+          "wav_sha256": "167befa3dcd9558146081ea55fe8b79904940a7bbda8f26c9cfa9e5f8b8fc36f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 2351
+        }
+      ],
+      "license_evidence": [
+        "https://github.com/tplai/kbsim/blob/ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4/LICENSE.md"
+      ]
+    },
+    {
+      "id": "foxfire-mxbrown",
+      "variant": "CherryMxBrownFoxfire",
+      "name": "Cherry MX Brown · Foxfire",
+      "license": "CC0-1.0",
+      "author": "Foxfire-",
+      "files": [
+        {
+          "file": "foxfire-mxbrown/press-generic.wav",
+          "source": "https://cdn.freesound.org/previews/570/570754_12873144-hq.mp3",
+          "source_sha256": "f13c0253b3c90aba3560fe4cbe55646e02d46b4e396ba2406c4e2be03b24c29e",
+          "wav_sha256": "cdd3d128ac754ac192c3711952186c231baebd7923d6c4d2622e6c71b674f95c",
+          "trim_start_frames": 2933,
+          "trim_end_frame": 10191,
+          "asset_page": "https://freesound.org/people/Foxfire-/sounds/570754/",
+          "source_format": "Public high-quality MP3 preview; original WAV requires Freesound login"
+        },
+        {
+          "file": "foxfire-mxbrown/release-generic.wav",
+          "source": "https://cdn.freesound.org/previews/570/570755_12873144-hq.mp3",
+          "source_sha256": "a66a6563a1f8393e4dbd0cad3cccc14e646839bb1c8074d7685ee1592ee583af",
+          "wav_sha256": "dc59faab69f5996adde7ab0310e65ddb5e37218f7cb4ff9f66f813ed416b9ddc",
+          "trim_start_frames": 5076,
+          "trim_end_frame": 10032,
+          "asset_page": "https://freesound.org/people/Foxfire-/sounds/570755/",
+          "source_format": "Public high-quality MP3 preview; original WAV requires Freesound login"
+        }
+      ],
+      "license_evidence": [
+        "https://freesound.org/people/Foxfire-/sounds/570754/",
+        "https://freesound.org/people/Foxfire-/sounds/570755/"
+      ]
+    },
+    {
+      "id": "kc1000",
+      "variant": "CherryKc1000",
+      "name": "Cherry KC 1000",
+      "license": "CC0-1.0",
+      "author": "unicaegames",
+      "files": [
+        {
+          "file": "kc1000/press-generic_001.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "7b873548c399b9aa0efbe63052fe1344c5317a9b23455b8be3523f47d434daf1",
+          "wav_sha256": "686a83251022f4df7033842e66107c82a8ceb3733a684990021d7af5a27ec9ab",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-001.wav"
+        },
+        {
+          "file": "kc1000/press-generic_002.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "f58f93430c1ad434feb341a89b89740ccad75e7a775d778d91b7f206e0acbe8e",
+          "wav_sha256": "39c7777fcd4658726a68a8186ea4948b8542e22c9f14685942c3091b92804fca",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-002.wav"
+        },
+        {
+          "file": "kc1000/press-generic_003.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "d67cf9547d99fc65c815c4c68fa9181e0af71419761cbb1d1f0a10eb8491a8d2",
+          "wav_sha256": "69ac32e1d8ed6e96acff823e2b684ad5697a9243a52882d630de21f62e42eaeb",
+          "trim_start_frames": 0,
+          "trim_end_frame": 9954,
+          "archive_member": "Single Keys/keypress-003.wav"
+        },
+        {
+          "file": "kc1000/press-generic_004.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "29e1aea1fb841a0663ce75e9d83e675ddc7ae5cef00c623bdda65a72604fde7e",
+          "wav_sha256": "e5c4994655e69eb7da2ddc1c256beb3044700f0a6988a3cadf679d93f970c2ea",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10167,
+          "archive_member": "Single Keys/keypress-004.wav"
+        },
+        {
+          "file": "kc1000/press-generic_005.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "619eb7e26571657b76fc9e1e3d99e85c3fc2259fa91c4c45f57384a85774ac24",
+          "wav_sha256": "b260f75ae75f3c9cd4999fc0c149d349350309e145c809868b4e47527ae66894",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10903,
+          "archive_member": "Single Keys/keypress-005.wav"
+        },
+        {
+          "file": "kc1000/press-generic_006.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "419bde001e7ed1cae63b84f60c803fb024a0254e1afe65e59d8c6d8ad4196eb7",
+          "wav_sha256": "9703429b6ccd5d52edb59607fd79e7e00b9fb4f189eb79e8e58ce206966bf163",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10113,
+          "archive_member": "Single Keys/keypress-006.wav"
+        },
+        {
+          "file": "kc1000/press-generic_007.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "522834f471e6c2935fd1e6a28042c0864925556efbec32c36d7c7a98026d4bfc",
+          "wav_sha256": "f63a5e3f528c9a6f89ff1ff7673fc8a945c78145cbc1ee3d6ab2ae6c995d75c6",
+          "trim_start_frames": 0,
+          "trim_end_frame": 8836,
+          "archive_member": "Single Keys/keypress-007.wav"
+        },
+        {
+          "file": "kc1000/press-generic_008.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "c2ab8722a81a2f1cab66cd863a09a9ec00392e2ede61362b3707a7bcc0eee506",
+          "wav_sha256": "ce1d89f329e5fa41cd412659c80886dd604c8e5ca93460052d9f7362b0db9d4e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-008.wav"
+        },
+        {
+          "file": "kc1000/press-generic_009.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "25595c1d1e0e18aada04dce3a651dc2c499f1fbc2647c1ab0b3c4e718275b16b",
+          "wav_sha256": "ffdcc279138ce70a1c8488e412cd81df085f214d12a7d664e529307d0615062c",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-009.wav"
+        },
+        {
+          "file": "kc1000/press-generic_010.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "3a65bf93ec554b068b0a64d11d2bb521cd54e7a9e7ef3362a670efb1e410f0dc",
+          "wav_sha256": "3344fa77543e8bf3cea3f0f2d107187aabf111f80e352fed564db4ae83ea93b4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-010.wav"
+        },
+        {
+          "file": "kc1000/press-generic_011.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "72e79b249040bff166be863dd75f5c50d6e22bf904bd7e0adab1b30941e19968",
+          "wav_sha256": "0faa389d3e48c1561a1e5c83fc86300aafa3d825623250cc22dc94fa94a2bc4d",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-011.wav"
+        },
+        {
+          "file": "kc1000/press-generic_012.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "79de7a9cc035ca4204600a52281129be9f258b1d903c88279b1e7128e57ba86c",
+          "wav_sha256": "6c40ee562cebfe42bcc59a589eb4cc1155cb114ea149100501dc8c32030825b5",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-012.wav"
+        },
+        {
+          "file": "kc1000/press-generic_013.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "a73d12a22403fe7b63a3da41ff07f13f956e3a30b397196288262d467f1e28c3",
+          "wav_sha256": "04df74901225fffc6ff2596986c409655e044f538fa71903f1f403f9276a2a90",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10064,
+          "archive_member": "Single Keys/keypress-013.wav"
+        },
+        {
+          "file": "kc1000/press-generic_014.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "b2069e29be488a7e55b151ef458e3314ec8f138f6d5a34fe19189f4810cba098",
+          "wav_sha256": "b936bde9576be0ccd495527c3d2f2f650f8f88a55f0955df024d45c6d9862464",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10712,
+          "archive_member": "Single Keys/keypress-014.wav"
+        },
+        {
+          "file": "kc1000/press-generic_015.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "39df76e16d6daa76619f17b724ed4fdcfacc3d0c311103f6d45dc23ec3634678",
+          "wav_sha256": "acfffcb40addbe14fb3dd558d8ff4e613603fed8ef9e7cfa533d6dfba03e1306",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-015.wav"
+        },
+        {
+          "file": "kc1000/press-generic_016.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "181e3c5d28d2a1ed0e953f5668391ef1f9b7cd577d33058fb62bd18473b45791",
+          "wav_sha256": "ee919416a6030b3d99e14a12254292638c79a0c7e02d475f6f41c15afc68fcc7",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-016.wav"
+        },
+        {
+          "file": "kc1000/press-generic_017.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "0f8d80d3f64328936bb699eade15cc89de12b7464833459e539bcf001101e431",
+          "wav_sha256": "79e751bb7484c37583ad51042b5f58d2900d5b58c9f61c0b14abbe5f50d73b52",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10366,
+          "archive_member": "Single Keys/keypress-017.wav"
+        },
+        {
+          "file": "kc1000/press-generic_018.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "784622e91e8797605fa76c43c0e4745663688c9faf455ff2a951d79f5f4dac65",
+          "wav_sha256": "15b9b9a6f3b8c1e0172f70aa0454bcbcc66c75646f15098968d6ec3cf57614a1",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10323,
+          "archive_member": "Single Keys/keypress-018.wav"
+        },
+        {
+          "file": "kc1000/press-generic_019.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "9cdb32c0074eaa114f8740e80bdfc28b1b44b4c6789371e1ec872e185e92d49e",
+          "wav_sha256": "c7e99e85f14ee29b3b31118d701f118677e0f3cbda2d219d71bfd391a3d4f38f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10007,
+          "archive_member": "Single Keys/keypress-019.wav"
+        },
+        {
+          "file": "kc1000/press-generic_020.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "056b14dea2cc590e817851d93f910b0ba918cd9179bbb4d2b39b4db92c0d505f",
+          "wav_sha256": "ad5e15f5aaf9b5fec5bfb783d7e45f4df054c60d88a554a9737702678aea5b6f",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-020.wav"
+        },
+        {
+          "file": "kc1000/press-generic_021.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "209c16dabc4f687a210db16db590a9e1ac40bfc2740ce569d2a9382d1e79acc7",
+          "wav_sha256": "0d1ccfd142ce1adbc59b97e0a4aee745203ee0c8393f925063871e0468b083ed",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-021.wav"
+        },
+        {
+          "file": "kc1000/press-generic_022.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "8cf602c150e338a94e9c19dcf68b1d80af5adb311c84ec20590a6ab0359b91c5",
+          "wav_sha256": "73a9bf72cd9423c1a3f32209dd765d2bbce8ede7c8f6dba7c3ae92e87db3f671",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-022.wav"
+        },
+        {
+          "file": "kc1000/press-generic_023.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "b7395018288bc4842af0983a97d790e9db84ab65dc8ae57629dc6a9ba31ff62c",
+          "wav_sha256": "bd672435b9d2b9f2ea19ec270262fc01e625eac911a7c3616509332ae57a72c4",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-023.wav"
+        },
+        {
+          "file": "kc1000/press-generic_024.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "39f3a508a9be3bbf31f630ccf9a9413f02068965babd3885771d6060f58b388e",
+          "wav_sha256": "638610411ca786b9648b1fd505524c49c0d8addec376d0f35f3258db83aa3fd9",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-024.wav"
+        },
+        {
+          "file": "kc1000/press-generic_025.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "bd3f9c7f28df223592fd6b3ae3c8c6f6f0fa5d899e66492825ee7b5dd4a3a9dc",
+          "wav_sha256": "8e633e50464061554c0f887beea941c4139ab00a3244502ee656fec960b026d0",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-025.wav"
+        },
+        {
+          "file": "kc1000/press-generic_026.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "a7016b0c501bcc73a190bb3783626ecc6c3086e9a935e13c3828d70854e4774e",
+          "wav_sha256": "dfd4fe4244b29bf23238bcaa627d53aa0ede7bf7a50ad83696b1198de311708e",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-026.wav"
+        },
+        {
+          "file": "kc1000/press-generic_027.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "c0376d2249a2c6d4e79d166445bb83ca6efbdcc09518b8323499644e393dd5ab",
+          "wav_sha256": "d7b63b8b66fa3f4f9f695bc9e9cc8f376cc3a87f3812854c2a843917cd8d13d8",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-027.wav"
+        },
+        {
+          "file": "kc1000/press-generic_028.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "a324dd279d5422bc2328e49122cdd39d071faccaf109332602f6ede13686ada7",
+          "wav_sha256": "13fb805a74d11a2ca2ff754bec1c3b5d6c22316d3c3c2c923def1d225452b88a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 10429,
+          "archive_member": "Single Keys/keypress-028.wav"
+        },
+        {
+          "file": "kc1000/press-generic_029.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "248b459e92dce812858aab2498546887957828007978fa29f481ac16d799a14b",
+          "wav_sha256": "e302559cdb4cbae30df844a061f7b0639d90f156203ea4e8dca26f150298a24a",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-029.wav"
+        },
+        {
+          "file": "kc1000/press-generic_030.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "355fb80cc1a40165de17c7653eed643da30afbb87f444d74c2eb0119adeec4f5",
+          "wav_sha256": "c94433a66e341cfa691e9a6b721d2492e7a10c8a14724c976fa7fdc6adbd3557",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-030.wav"
+        },
+        {
+          "file": "kc1000/press-generic_031.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "df5718d60529e81769597226c5bce593b3a6fd6ae7aeb9b7249754059d0c464a",
+          "wav_sha256": "a4bb666fbe8d763120cc96f93feee370c69b3bc2ad5e12974e364875dbf35a06",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-031.wav"
+        },
+        {
+          "file": "kc1000/press-generic_032.wav",
+          "source": "https://opengameart.org/sites/default/files/unicae_games_keyboard_soundpack_1_0.zip",
+          "source_sha256": "569648b47017747070b6d2a6d640449030b1b70da717c1f774c76a32dd75fb6c",
+          "wav_sha256": "44774071b9d5d5179808d0538cd5b925b6cab2f3f5522d49403e300f419a1ac9",
+          "trim_start_frames": 0,
+          "trim_end_frame": 11025,
+          "archive_member": "Single Keys/keypress-032.wav"
+        }
+      ],
+      "license_evidence": [
+        "https://opengameart.org/content/keyboard-soundpack-1-typing-and-single-keystrokes"
+      ]
+    },
+    {
+      "id": "macbook-air-m2",
+      "variant": "MacBookAirM2",
+      "name": "MacBook Air M2",
+      "license": "CC0-1.0",
+      "author": "Sadiquecat",
+      "files": [
+        {
+          "file": "macbook-air-m2/press-generic_a.wav",
+          "source": "https://cdn.freesound.org/previews/799/799109_5287430-hq.mp3",
+          "source_sha256": "80295a8701081be6a7151dfa2d4b3bcf5e2d4eb7744ba44c4fe3a283e23bf80a",
+          "wav_sha256": "92941914a3916d40234e12e2933d7dd244f208a6abb9880cb006f5272271fb0b",
+          "trim_start_frames": 31,
+          "trim_end_frame": 9870,
+          "asset_page": "https://freesound.org/people/Sadiquecat/sounds/799109/",
+          "source_format": "Public high-quality MP3 preview; original WAV requires Freesound login"
+        },
+        {
+          "file": "macbook-air-m2/press-generic_r.wav",
+          "source": "https://cdn.freesound.org/previews/799/799110_5287430-hq.mp3",
+          "source_sha256": "efcf632d9fb9a92657dbb21d4d7bccd49587858c1e10d94a3b34e529068bc4c6",
+          "wav_sha256": "9f98deff8f7df8aad52cf895c0ef02a69cf424abc3c6634e7474df3fbce41e68",
+          "trim_start_frames": 9,
+          "trim_end_frame": 10253,
+          "asset_page": "https://freesound.org/people/Sadiquecat/sounds/799110/",
+          "source_format": "Public high-quality MP3 preview; original WAV requires Freesound login"
+        },
+        {
+          "file": "macbook-air-m2/press-space.wav",
+          "source": "https://cdn.freesound.org/previews/799/799113_5287430-hq.mp3",
+          "source_sha256": "3a5361f8eefe35be73898244e3d72c61a1ed0a533dec0df16880b58b62a07092",
+          "wav_sha256": "b047245ca8b6c033d27a409f0575533669ebca4f4bdf2d4752d6c2e79d8b712b",
+          "trim_start_frames": 0,
+          "trim_end_frame": 7452,
+          "asset_page": "https://freesound.org/people/Sadiquecat/sounds/799113/",
+          "source_format": "Public high-quality MP3 preview; original WAV requires Freesound login"
+        }
+      ],
+      "license_evidence": [
+        "https://freesound.org/people/Sadiquecat/sounds/799109/",
+        "https://freesound.org/people/Sadiquecat/sounds/799110/",
+        "https://freesound.org/people/Sadiquecat/sounds/799113/"
+      ]
+    }
+  ]
+}

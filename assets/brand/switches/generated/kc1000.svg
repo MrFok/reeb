@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="switch-kc1000-title">
+  <title id="switch-kc1000-title">Cherry KC 1000</title>
+  <g id="switch-kc1000-base"><rect x="72" y="72" width="368" height="368" rx="34" fill="#303A4B" stroke="none" stroke-width="0"/><rect x="65" y="215" width="35" height="82" rx="9" fill="#303A4B" stroke="none" stroke-width="0"/><rect x="420" y="215" width="35" height="82" rx="9" fill="#303A4B" stroke="none" stroke-width="0"/></g>
+  <g id="switch-kc1000-housing" opacity="1"><rect x="88" y="88" width="336" height="336" rx="26" fill="#454E60" stroke="#384256" stroke-width="5"/></g>
+  <g id="switch-kc1000-stem"><circle cx="256" cy="256" r="113" fill="#2d394e" stroke="none" stroke-width="0"/><circle cx="256" cy="256" r="95" fill="#68758B" stroke="#546178" stroke-width="4"/><circle cx="256" cy="256" r="45" fill="#778397" stroke="#546178" stroke-width="3"/></g>
+</svg>

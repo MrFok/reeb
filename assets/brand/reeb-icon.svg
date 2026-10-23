@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Reeb</title>
+  <desc id="desc">A glossy cobalt-blue keycap with two cream winking eyes.</desc>
+  <defs>
+    <path id="outline" d="M112 0H400C469 0 512 48 512 117V411C512 477 476 512 408 512H104C36 512 0 477 0 411V117C0 48 43 0 112 0Z"/>
+    <path id="top" d="M126 10H380C429 10 445 32 445 87L443 284C442 341 426 363 378 370C307 380 207 380 126 372C80 368 62 344 62 298V96C62 40 80 10 126 10Z"/>
+    <path id="rim-path" d="M128 13H378C425 13 439 34 439 87L439 284C438 337 423 359 377 366C306 376 208 376 127 368C84 364 66 342 66 298V96C66 43 83 13 128 13Z"/>
+    <clipPath id="body-clip"><use href="#outline"/></clipPath>
+    <clipPath id="face-clip"><use href="#top"/></clipPath>
+    <linearGradient id="body" x1="0" y1="210" x2="512" y2="252" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1564FC"/>
+      <stop offset=".18" stop-color="#226FFC"/>
+      <stop offset=".55" stop-color="#1158EB"/>
+      <stop offset=".88" stop-color="#0341D0"/>
+      <stop offset="1" stop-color="#003AC7"/>
+    </linearGradient>
+    <radialGradient id="crown" cx="0" cy="0" r="1" gradientTransform="translate(250 3) scale(271 183)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#65B4FF"/>
+      <stop offset=".65" stop-color="#328BFC" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#267CFB" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="front" x1="256" y1="363" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1260F3" stop-opacity="0"/>
+      <stop offset=".24" stop-color="#0348D9" stop-opacity=".88"/>
+      <stop offset=".68" stop-color="#0447D7"/>
+      <stop offset="1" stop-color="#0039C5"/>
+    </linearGradient>
+    <radialGradient id="front-light" cx="0" cy="0" r="1" gradientTransform="translate(53 426) rotate(17) scale(100 113)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4B91FF" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#1A66F2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="face" x1="80" y1="168" x2="440" y2="204" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3988FC"/>
+      <stop offset=".14" stop-color="#2F80FC"/>
+      <stop offset=".52" stop-color="#2D7DFC"/>
+      <stop offset=".8" stop-color="#3685FC"/>
+      <stop offset="1" stop-color="#64A8FC"/>
+    </linearGradient>
+    <radialGradient id="dish" cx="0" cy="0" r="1" gradientTransform="translate(259 185) scale(217 211)" gradientUnits="userSpaceOnUse">
+      <stop offset=".49" stop-color="#0B64FA" stop-opacity="0"/>
+      <stop offset=".9" stop-color="#81BDFF" stop-opacity=".025"/>
+      <stop offset="1" stop-color="#A3D6FF" stop-opacity=".14"/>
+    </radialGradient>
+    <radialGradient id="right-reflection" cx="0" cy="0" r="1" gradientTransform="translate(439 260) rotate(2) scale(28 161)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D3F4FF" stop-opacity=".85"/>
+      <stop offset=".36" stop-color="#B7E7FF" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#7EBDFE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="256" y1="13" x2="256" y2="372" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9FBFF"/>
+      <stop offset=".15" stop-color="#F3FFFF"/>
+      <stop offset=".76" stop-color="#EEFDFF"/>
+      <stop offset="1" stop-color="#88C8FF" stop-opacity=".18"/>
+    </linearGradient>
+    <linearGradient id="left-glint" x1="72" y1="298" x2="78" y2="357" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6FFFF"/>
+      <stop offset="1" stop-color="#D4F6FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="right-glint" x1="444" y1="53" x2="426" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D4F8FF" stop-opacity=".7"/>
+      <stop offset=".34" stop-color="#F4FFFF"/>
+      <stop offset=".8" stop-color="#F3FFFF"/>
+      <stop offset="1" stop-color="#DCFAFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="eye" x1="256" y1="134" x2="256" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFF3"/>
+      <stop offset="1" stop-color="#F9F7E4"/>
+    </linearGradient>
+    <linearGradient id="bevel-reflection" x1="65" y1="354" x2="22" y2="479" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B1DFFF" stop-opacity=".48"/>
+      <stop offset=".46" stop-color="#A1CEFF" stop-opacity=".94"/>
+      <stop offset=".83" stop-color="#8FC0FF" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#629FFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="bevel-soft" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="3.4"/></filter>
+    <filter id="broad" x="-40%" y="-80%" width="180%" height="260%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="rim-bloom" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <filter id="glint" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation=".65"/></filter>
+    <filter id="grain" x="0" y="0" width="512" height="512" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="1.25" numOctaves="3" seed="18"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 .065 0 0"/>
+    </filter>
+  </defs>
+  <g id="keycap" clip-path="url(#body-clip)">
+    <use href="#outline" fill="url(#body)"/>
+    <use href="#outline" fill="url(#crown)"/>
+    <path d="M0 348H512V512H0Z" fill="url(#front)"/>
+    <path d="M0 337H512V512H0Z" fill="url(#front-light)"/>
+    <path d="M67 357C52 383 34 419 22 450C19 464 25 480 37 490" stroke="url(#bevel-reflection)" stroke-width="14" stroke-linecap="round" filter="url(#bevel-soft)"/>
+    <path d="M437 356C451 383 473 419 486 454" stroke="#72ABFF" stroke-opacity=".52" stroke-width="12" stroke-linecap="round" filter="url(#bevel-soft)"/>
+    <path d="M111 381C187 401 332 400 407 377" stroke="#0039C0" stroke-opacity=".45" stroke-width="24" stroke-linecap="round" filter="url(#broad)"/>
+    <use href="#top" fill="url(#face)"/>
+    <g clip-path="url(#face-clip)">
+      <use href="#top" fill="url(#dish)"/>
+      <use href="#top" fill="url(#right-reflection)"/>
+      <path d="M88 38C108 22 137 21 170 21H363C399 21 420 29 432 45" stroke="#A6DDFF" stroke-opacity=".2" stroke-width="10" stroke-linecap="round" filter="url(#soft)"/>
+      <path d="M79 73C72 108 73 280 80 317" stroke="#7FC2FF" stroke-opacity=".46" stroke-width="16" stroke-linecap="round" filter="url(#soft)"/>
+      <path d="M96 355C164 374 324 379 402 354" stroke="#A9DCFF" stroke-opacity=".12" stroke-width="10" stroke-linecap="round" filter="url(#soft)"/>
+      <path d="M0 0H512V512H0Z" filter="url(#grain)"/>
+    </g>
+    <use href="#rim-path" stroke="url(#rim)" stroke-opacity=".56" stroke-width="7" filter="url(#rim-bloom)"/>
+    <use href="#rim-path" stroke="url(#rim)" stroke-width="3.4" filter="url(#glint)"/>
+    <path d="M80 353C69 344 66 325 66 298V96C66 44 83 14 128 14H379" stroke="url(#left-glint)" stroke-width="3.5" stroke-linecap="round" filter="url(#glint)"/>
+    <path d="M419 28C435 40 440 59 439 88V284C438 322 434 340 423 351" stroke="url(#right-glint)" stroke-width="3.3" stroke-linecap="round" filter="url(#glint)"/>
+    <path d="M424 21C447 33 453 59 452 91L449 287C448 321 446 342 438 353" stroke="#9AD7FF" stroke-opacity=".58" stroke-width="2.5" stroke-linecap="round" filter="url(#rim-bloom)"/>
+    <path d="M86 5C148 1 358 1 411 7" stroke="#73C0FF" stroke-opacity=".64" stroke-width="2.4" stroke-linecap="round" filter="url(#glint)"/>
+    <path d="M24 456C40 491 67 507 106 510H405C444 508 470 495 489 466" stroke="#0031B8" stroke-opacity=".44" stroke-width="7" filter="url(#soft)"/>
+  </g>
+  <g id="eyes" fill="url(#eye)">
+    <path d="M150 165C171 143 198 149 213 170" fill="none" stroke="url(#eye)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M305 170C320 149 347 143 368 165" fill="none" stroke="url(#eye)" stroke-width="24" stroke-linecap="round"/>
+  </g>
+</svg>

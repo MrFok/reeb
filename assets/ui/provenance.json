@@ -1,0 +1,11 @@
+{
+  "family": "Plus Jakarta Sans",
+  "source": "https://github.com/tokotype/PlusJakartaSans",
+  "license": "OFL-1.1",
+  "files": {
+    "Jakarta-Medium.ttf": "0e9e70d05cc6b21fa1511ef3a6447a74906307c5eed3e759133a537c0dfd347b",
+    "Jakarta-SemiBold.ttf": "4579cef10b6afb5c3dd2e636f1a98e48b1ea7175c465866287c4249f14f02ac2",
+    "Jakarta-Bold.ttf": "104a2269b3bd2f0d48881709e107268c7c5b6778b8e1d9b1b40dac0e19e3e29b",
+    "OFL.txt": "995c7199cab65954f545996326755daee7b63cc6b42b06c13da1f9502ab08a99"
+  }
+}

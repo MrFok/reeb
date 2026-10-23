@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="switch-boxnavy-title">
+  <title id="switch-boxnavy-title">Kailh Box Navy</title>
+  <g id="switch-boxnavy-base"><rect x="72" y="72" width="368" height="368" rx="34" fill="#F0EFE3" stroke="none" stroke-width="0"/><rect x="65" y="215" width="35" height="82" rx="9" fill="#F0EFE3" stroke="none" stroke-width="0"/><rect x="420" y="215" width="35" height="82" rx="9" fill="#F0EFE3" stroke="none" stroke-width="0"/></g>
+  <g id="switch-boxnavy-housing" opacity="0.88"><rect x="88" y="88" width="336" height="336" rx="26" fill="#DAE3EF" stroke="#a3adbd" stroke-width="5"/><rect x="216" y="366" width="80" height="17" rx="5" fill="#788395" stroke="none" stroke-width="0"/></g>
+  <g id="switch-boxnavy-stem"><rect x="160" y="160" width="192" height="192" rx="12" fill="#354A83" stroke="#6575a1" stroke-width="4"/><rect x="178" y="178" width="156" height="156" rx="5" fill="#788395" stroke="none" stroke-width="0"/><path d="M234 192H278V234H320V278H278V320H234V278H192V234H234Z" fill="#354A83" stroke="#6575a1" stroke-width="4" stroke-linejoin="round"/></g>
+</svg>

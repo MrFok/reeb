@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="switch-macbook-air-m2-title">
+  <title id="switch-macbook-air-m2-title">MacBook Air M2</title>
+  <g id="switch-macbook-air-m2-base"><rect x="72" y="72" width="368" height="368" rx="34" fill="#969FAC" stroke="none" stroke-width="0"/><rect x="65" y="215" width="35" height="82" rx="9" fill="#969FAC" stroke="none" stroke-width="0"/><rect x="420" y="215" width="35" height="82" rx="9" fill="#969FAC" stroke="none" stroke-width="0"/></g>
+  <g id="switch-macbook-air-m2-housing" opacity="1"><rect x="88" y="88" width="336" height="336" rx="26" fill="#BDC3CC" stroke="#8e96a3" stroke-width="5"/></g>
+  <g id="switch-macbook-air-m2-stem"><rect x="136" y="158" width="240" height="196" rx="16" fill="#252932" stroke="#595c63" stroke-width="4"/><rect x="158" y="180" width="196" height="152" rx="8" fill="#697384" stroke="none" stroke-width="0"/><path d="M178 202L334 310M334 202L178 310" fill="none" stroke="#E9ECF1" stroke-width="14" stroke-linecap="round"/><circle cx="256" cy="256" r="12" fill="#252932" stroke="#595c63" stroke-width="3"/></g>
+</svg>

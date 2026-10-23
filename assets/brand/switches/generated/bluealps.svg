@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="switch-bluealps-title">
+  <title id="switch-bluealps-title">SKCM Blue Alps</title>
+  <g id="switch-bluealps-base"><rect x="64" y="102" width="384" height="308" rx="24" fill="#2E3847" stroke="none" stroke-width="0"/><rect x="57" y="215" width="35" height="82" rx="9" fill="#2E3847" stroke="none" stroke-width="0"/><rect x="420" y="215" width="35" height="82" rx="9" fill="#2E3847" stroke="none" stroke-width="0"/></g>
+  <g id="switch-bluealps-housing" opacity="1"><rect x="84" y="116" width="344" height="280" rx="18" fill="#434D5C" stroke="#364153" stroke-width="5"/><rect x="216" y="355" width="80" height="17" rx="5" fill="#2c384c" stroke="none" stroke-width="0"/></g>
+  <g id="switch-bluealps-stem"><rect x="150" y="182" width="212" height="148" rx="12" fill="#2c384c" stroke="none" stroke-width="0"/><rect x="166" y="198" width="180" height="116" rx="7" fill="#65A8D8" stroke="#5288b2" stroke-width="4"/><rect x="194" y="224" width="124" height="64" rx="3" fill="#2c384c" stroke="none" stroke-width="0"/></g>
+</svg>

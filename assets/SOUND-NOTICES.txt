@@ -1,0 +1,51 @@
+REEB SOUND RECORDINGS
+
+NovelKeys Cream, Alpaca, Gateron Black Ink, Gateron Red Ink, Holy Panda,
+Cherry MX Black, Cherry MX Blue, Cherry MX Brown, Kailh Box Navy,
+Buckling Spring, SKCM Blue Alps, Topre, and Turquoise Tealios
+
+Source: https://github.com/tplai/kbsim
+Commit: ba103f3b0afa9dab80447aa2e7e2ed80b6bd80e4
+Copyright (c) Thomas Lai
+License: MIT. The full notice is in KBSIM-LICENSE.txt.
+Original MP3s converted to mono 44.1 kHz PCM16 WAV.
+The original Reeb Cream WAVs are unchanged.
+These profiles are redistributed under the upstream repository's MIT license.
+
+Cherry MX Brown - Foxfire-
+
+Author: Foxfire-
+Press: https://freesound.org/people/Foxfire-/sounds/570754/
+Release: https://freesound.org/people/Foxfire-/sounds/570755/
+License: CC0 1.0 Universal. The full text is in CC0-LICENSE.txt.
+Source: public high-quality MP3 previews linked by the original asset pages.
+Converted to mono 44.1 kHz PCM16 WAV; outer silence trimmed.
+Original WAV downloads require Freesound login and were not used.
+
+Cherry KC 1000 - Keyboard Soundpack #1
+
+Author: unicaegames
+Source: https://opengameart.org/content/keyboard-soundpack-1-typing-and-single-keystrokes
+License: CC0 1.0 Universal. The full text is in CC0-LICENSE.txt.
+All 32 single-key recordings included; typing sequences are not used.
+Converted to mono 44.1 kHz PCM16 WAV; outer silence trimmed.
+Complete keystrokes play only on key-down, without a separate release.
+
+MacBook Air M2
+
+Author: Sadiquecat
+Regular A key: https://freesound.org/people/Sadiquecat/sounds/799109/
+Regular R key: https://freesound.org/people/Sadiquecat/sounds/799110/
+Spacebar: https://freesound.org/people/Sadiquecat/sounds/799113/
+Recorded from a MacBook Air M2 keyboard on 2025-03-29.
+License: CC0 1.0 Universal. The full text is in CC0-LICENSE.txt.
+Source: public high-quality MP3 previews linked by the original asset pages.
+Converted to mono 44.1 kHz PCM16 WAV; outer silence trimmed.
+Original WAV downloads require Freesound login and were not used.
+Two regular-key variations and a dedicated spacebar play on key-down only.
+Enter and Backspace use the regular-key recordings. No separate key-up
+recordings are provided or synthesized.
+
+Pinned source URLs, archive members, conversion details, and SHA-256 hashes
+for every bundled recording are in sound-packs.json. Import and integrity
+verification commands are documented in docs/sound-packs.md in the Reeb source.

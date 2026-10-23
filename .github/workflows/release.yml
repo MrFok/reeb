@@ -1,0 +1,56 @@
+name: Windows release
+
+on:
+  push:
+    tags: ['v[0-9]*.[0-9]*.[0-9]*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  checks-and-package:
+    uses: ./.github/workflows/ci.yml
+
+  draft:
+    needs: checks-and-package
+    runs-on: windows-2022
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: reeb-windows-x64
+          path: dist
+          digest-mismatch: error
+      - name: Verify files and create draft release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $files = @('reeb.exe', 'reeb-windows-x64.zip', 'reeb-notices.zip', 'LICENSE')
+          $lines = @(Get-Content -LiteralPath dist/SHA256SUMS)
+          if ($lines.Count -ne $files.Count) { throw 'Unexpected checksum inventory.' }
+          foreach ($file in $files) {
+              $hash = (Get-FileHash -LiteralPath "dist/$file" -Algorithm SHA256).Hash.ToLowerInvariant()
+              if ($lines -cnotcontains "$hash  $file") { throw "Checksum missing or incorrect: $file" }
+          }
+          $notes = @"
+          Recommended download: reeb-windows-x64.zip. It contains the application, README, MIT LICENSE, and required third-party notices.
+
+          If downloading reeb.exe separately, also download and retain LICENSE and reeb-notices.zip. SHA256SUMS covers the EXE, both ZIPs, and LICENSE.
+
+          Complete the [release checklist](https://github.com/$env:GH_REPO/blob/$env:GITHUB_SHA/docs/release-checklist.md), including source permissions and interactive Windows checks, before publishing this draft.
+          "@
+          $notesPath = Join-Path $env:RUNNER_TEMP 'reeb-release-notes.md'
+          Set-Content -LiteralPath $notesPath -Value $notes -Encoding utf8NoBOM
+          $assets = @($files | ForEach-Object { "dist/$_" }) + 'dist/SHA256SUMS'
+          gh release create $env:RELEASE_TAG @assets --repo $env:GH_REPO --verify-tag --draft --title "Reeb $env:RELEASE_TAG" --notes-file $notesPath
+          if ($LASTEXITCODE -ne 0) { throw 'Draft release creation failed; inspect any existing draft before retrying.' }

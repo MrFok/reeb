@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="switch-holypanda-title">
+  <title id="switch-holypanda-title">Holy Panda</title>
+  <g id="switch-holypanda-base"><rect x="72" y="72" width="368" height="368" rx="34" fill="#D6D4BD" stroke="none" stroke-width="0"/><rect x="65" y="215" width="35" height="82" rx="9" fill="#D6D4BD" stroke="none" stroke-width="0"/><rect x="420" y="215" width="35" height="82" rx="9" fill="#D6D4BD" stroke="none" stroke-width="0"/></g>
+  <g id="switch-holypanda-housing" opacity="1"><rect x="88" y="88" width="336" height="336" rx="26" fill="#E8E7D6" stroke="#adb0ab" stroke-width="5"/><rect x="216" y="366" width="80" height="17" rx="5" fill="#7f8589" stroke="none" stroke-width="0"/></g>
+  <g id="switch-holypanda-stem"><rect x="168" y="168" width="176" height="176" rx="24" fill="#7f8589" stroke="none" stroke-width="0"/><path d="M234 192H278V234H320V278H278V320H234V278H192V234H234Z" fill="#F6A351" stroke="#c0844c" stroke-width="4" stroke-linejoin="round"/></g>
+</svg>
