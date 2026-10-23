@@ -54,4 +54,6 @@ Create the new repository from this folder alone. Configure Actions and branch p
 
 Set `Cargo.toml` to the intended version and push its matching `vX.Y.Z` tag after approval. The release workflow runs CI, packages the build and prepares the GitHub release files. Review the executable, ZIP, notices and checksums before making a release public. Keep notices with standalone executable downloads; the complete Windows ZIP is the recommended download.
 
+For macOS, follow [Mac signing and notarization](macos.md#developer-id-signing-and-notarization). Only publish the Developer ID-signed, notarized and stapled DMG after confirming its signing record and final checksum. The default Mac builder output is a local test package.
+
 Hosted workflow execution, physical Windows/audio checks and artwork clearance must be recorded separately from local automated checks. Do not label an unrun check as passed.

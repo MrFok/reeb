@@ -37,12 +37,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     if reeb::tray::Tray::open_existing() {
         return Ok(());
     }
+    let viewport = egui::ViewportBuilder::default()
+        .with_decorations(cfg!(target_os = "macos"))
+        .with_inner_size([840.0, 660.0])
+        .with_min_inner_size([720.0, 580.0]);
+    // An explicit empty icon disables eframe's default egui icon on macOS,
+    // preserving the padded ICNS loaded from the app bundle.
+    #[cfg(target_os = "macos")]
+    let viewport = viewport.with_icon(egui::IconData::default());
+    #[cfg(not(target_os = "macos"))]
+    let viewport = viewport.with_icon(icon::data());
     let options = eframe::NativeOptions {
-        viewport: egui::ViewportBuilder::default()
-            .with_icon(icon::data())
-            .with_decorations(false)
-            .with_inner_size([840.0, 660.0])
-            .with_min_inner_size([720.0, 580.0]),
+        viewport,
         window_builder: Some(Box::new(|builder| {
             builder
                 .with_inner_size([840.0, 660.0])

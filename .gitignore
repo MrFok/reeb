@@ -2,6 +2,8 @@
 /dist/
 *.wav.tmp
 .DS_Store
+__pycache__/
+*.pyc
 
 AGENTS.md
 AGENTS.override.md

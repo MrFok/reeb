@@ -3,7 +3,7 @@ name = "reeb"
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.88"
-description = "Mechanical keyboard sounds for Windows"
+description = "Mechanical keyboard sounds for Windows and macOS"
 license = "MIT"
 publish = false
 

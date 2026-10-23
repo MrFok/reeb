@@ -1,4 +1,4 @@
-name: Windows release
+name: Reeb release
 
 on:
   push:
@@ -15,8 +15,11 @@ jobs:
   checks-and-package:
     uses: ./.github/workflows/ci.yml
 
+  mac-checks-and-package:
+    uses: ./.github/workflows/macos.yml
+
   draft:
-    needs: checks-and-package
+    needs: [checks-and-package, mac-checks-and-package]
     runs-on: windows-2022
     timeout-minutes: 10
     permissions:
@@ -26,6 +29,11 @@ jobs:
         with:
           name: reeb-windows-x64
           path: dist
+          digest-mismatch: error
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: reeb-macos-arm64
+          path: dist/macos
           digest-mismatch: error
       - name: Verify files and create draft release
         shell: pwsh
@@ -42,15 +50,23 @@ jobs:
               $hash = (Get-FileHash -LiteralPath "dist/$file" -Algorithm SHA256).Hash.ToLowerInvariant()
               if ($lines -cnotcontains "$hash  $file") { throw "Checksum missing or incorrect: $file" }
           }
+          $macFile = "reeb-$($env:RELEASE_TAG.Substring(1))-macos-arm64.dmg"
+          $macHash = (Get-FileHash -LiteralPath "dist/macos/$macFile" -Algorithm SHA256).Hash.ToLowerInvariant()
+          $macLines = @(Get-Content -LiteralPath dist/macos/SHA256SUMS-arm64)
+          if ($macLines.Count -ne 1 -or $macLines[0] -cne "$macHash  $macFile") {
+              throw 'Mac DMG checksum missing or incorrect.'
+          }
           $notes = @"
           Recommended download: reeb-windows-x64.zip. It contains the application, README, MIT LICENSE, and required third-party notices.
 
           If downloading reeb.exe separately, also download and retain LICENSE and reeb-notices.zip. SHA256SUMS covers the EXE, both ZIPs, and LICENSE.
 
+          Apple Silicon: $macFile is the CI test build, with SHA256SUMS-arm64. It is ad-hoc signed and is not notarized. Replace it with the Developer ID-signed, notarized DMG and matching checksum from scripts/sign-macos.py before publishing this draft.
+
           Complete the [release checklist](https://github.com/$env:GH_REPO/blob/$env:GITHUB_SHA/docs/release-checklist.md), including source permissions and interactive Windows checks, before publishing this draft.
           "@
           $notesPath = Join-Path $env:RUNNER_TEMP 'reeb-release-notes.md'
           Set-Content -LiteralPath $notesPath -Value $notes -Encoding utf8NoBOM
-          $assets = @($files | ForEach-Object { "dist/$_" }) + 'dist/SHA256SUMS'
+          $assets = @($files | ForEach-Object { "dist/$_" }) + 'dist/SHA256SUMS' + "dist/macos/$macFile" + 'dist/macos/SHA256SUMS-arm64'
           gh release create $env:RELEASE_TAG @assets --repo $env:GH_REPO --verify-tag --draft --title "Reeb $env:RELEASE_TAG" --notes-file $notesPath
           if ($LASTEXITCODE -ne 0) { throw 'Draft release creation failed; inspect any existing draft before retrying.' }

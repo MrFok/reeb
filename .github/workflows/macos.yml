@@ -1,0 +1,57 @@
+name: macOS CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+env:
+  RUSTUP_TOOLCHAIN: 1.95.0-aarch64-apple-darwin
+  CARGO_TERM_COLOR: always
+  MACOS_SIGN_IDENTITY: '-'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install Rust
+        run: rustup toolchain install "$RUSTUP_TOOLCHAIN" --profile minimal --component rustfmt --component clippy --no-self-update
+      - name: Fetch locked Mac dependencies
+        run: cargo fetch --locked --target aarch64-apple-darwin
+      - name: Verify embedded asset hashes
+        run: python3 scripts/verify-assets.py
+      - name: Formatting
+        run: cargo fmt --all -- --check
+      - name: Clippy
+        run: cargo clippy --locked --offline --all-targets -- -D warnings
+      - name: Tests
+        run: cargo test --locked --offline
+      - name: Build and package Apple Silicon DMG
+        env:
+          RELEASE_TAG: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || '' }}
+        run: python3 scripts/build-macos.py
+      - name: Verify packaged app, installer and demo audio
+        run: python3 scripts/test-macos-package.py dist/macos/reeb-*-macos-arm64.dmg
+      - name: Retain Mac DMG and checksum
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: reeb-macos-arm64
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
+          path: |
+            dist/macos/reeb-*-macos-arm64.dmg
+            dist/macos/SHA256SUMS-arm64

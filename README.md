@@ -4,7 +4,7 @@
 
 # reeb
 
-mechanical keyboard sounds for windows, built in rust.
+mechanical keyboard sounds for windows and macOS, built in rust.
 
 choose from over 15 keyboard sound packs and shape your keyboard's tone and feel.
 
@@ -13,6 +13,16 @@ reeb is **free** and uses 80% less memory
 ## download
 
 download the windows ZIP from this repository's **Releases** page. extract it and open `reeb.exe`. keep the included licenses and notices with the app. no installer or administrator privileges are required.
+
+## macOS
+
+Build a native Mac app and DMG with `python3 scripts/build-macos.py` after fetching the locked Mac dependencies. The app includes native window controls, a menu-bar icon, Command-Q / Command-comma, system appearance and background typing with Input Monitoring permission. See [Mac setup and packaging](docs/macos.md).
+
+Mac packaging uses an installed Developer ID identity when available; otherwise it produces an ad-hoc test build. Notarization is a separate step before distributing a trusted download. Apple Silicon is tested; Intel requires its own build and verification.
+
+For distribution, `python3 scripts/sign-macos.py --notarize` uses the configured personal Developer ID identity and Keychain credentials to produce a signed, notarized and stapled DMG in `dist/macos/signed/`. See the [signing setup](docs/macos.md#developer-id-signing-and-notarization).
+
+The **macOS CI** workflow uploads the Apple Silicon DMG and checksum as **reeb-macos-arm64**. Version-tag builds also attach them to the draft release. CI DMGs are ad-hoc test builds; replace them with the notarized package before publishing a release.
 
 ## get started
 

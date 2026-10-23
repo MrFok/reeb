@@ -143,9 +143,13 @@ pub fn show(
             .font(theme::heading(16.0)),
         );
         ui.label(
-            egui::RichText::new("Type anywhere to see your keys.")
-                .small()
-                .color(colors.muted),
+            egui::RichText::new(if cfg!(target_os = "macos") {
+                "Type to see your keys."
+            } else {
+                "Type anywhere to see your keys."
+            })
+            .small()
+            .color(colors.muted),
         );
     });
     ui.add_space(24.0);

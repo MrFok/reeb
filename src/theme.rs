@@ -106,6 +106,25 @@ pub fn apply(ctx: &egui::Context) {
         .get_mut(&egui::FontFamily::Proportional)
         .unwrap()
         .insert(0, "Jakarta Medium".to_owned());
+    #[cfg(target_os = "macos")]
+    if let Ok(bytes) = std::fs::read("/System/Library/Fonts/SFNS.ttf") {
+        fonts.font_data.insert(
+            "macOS System".into(),
+            egui::FontData::from_owned(bytes).into(),
+        );
+        fonts
+            .families
+            .get_mut(&egui::FontFamily::Proportional)
+            .unwrap()
+            .insert(0, "macOS System".into());
+        for name in ["Jakarta SemiBold", "Jakarta Bold"] {
+            fonts
+                .families
+                .get_mut(&egui::FontFamily::Name(name.into()))
+                .unwrap()
+                .insert(0, "macOS System".into());
+        }
+    }
     ctx.set_fonts(fonts);
     ctx.options_mut(|options| options.fallback_theme = egui::Theme::Light);
     for theme in [egui::Theme::Light, egui::Theme::Dark] {

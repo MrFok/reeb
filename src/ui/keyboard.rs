@@ -82,6 +82,14 @@ const ROWS: [&[(&str, u16, f32)]; 5] = [
 ];
 
 pub fn key_label(scan: u16) -> Option<&'static str> {
+    #[cfg(target_os = "macos")]
+    match scan {
+        0x15b | 0x15c => return Some("Cmd"),
+        0x38 | 0x138 => return Some("Opt"),
+        0x1c => return Some("Return"),
+        0x0e => return Some("Delete"),
+        _ => {}
+    }
     match scan {
         0x29 => Some("`"),
         0x45 => Some("Num"),
@@ -233,7 +241,7 @@ pub fn show(ui: &mut egui::Ui, events: &[KeyEvent], reset: bool) {
         ui.painter().text(
             key_rect.center(),
             egui::Align2::CENTER_CENTER,
-            label,
+            key_label(scan).unwrap_or(label),
             egui::FontId::proportional((0.35 * scale).clamp(8.0, 11.0)),
             colors.ink,
         );

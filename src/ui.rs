@@ -3,6 +3,7 @@ use eframe::egui;
 use reeb::{appearance::ThemeMode, keys::KeyEvent, mixer::Settings};
 
 #[path = "ui/chrome.rs"]
+#[cfg(any(not(target_os = "macos"), test))]
 mod chrome;
 #[path = "ui/keyboard.rs"]
 mod keyboard;
@@ -59,6 +60,8 @@ pub struct Actions {
     pub tone_preview: Option<ToneTarget>,
     pub refresh_output: bool,
     pub quit: bool,
+    #[cfg(target_os = "macos")]
+    pub input_permission: bool,
 }
 
 pub fn reset_visualizer(ctx: &egui::Context) {
@@ -81,6 +84,7 @@ pub fn show(
         0,
         colors.background,
     );
+    #[cfg(not(target_os = "macos"))]
     chrome::show(ctx);
     if *page != Page::Settings {
         reset_visualizer(ctx);
@@ -104,6 +108,10 @@ pub fn show(
                 ui.label(
                     egui::RichText::new(if !saved.enabled {
                         "Sounds paused"
+                    } else if cfg!(target_os = "macos")
+                        && !status.input.starts_with("Listening across")
+                    {
+                        "Focused typing only"
                     } else if status.audio_ready {
                         "Ready to type"
                     } else {
@@ -114,13 +122,15 @@ pub fn show(
                 );
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                     ui.label(
-                        egui::RichText::new(
-                            if cfg!(windows) && saved.close_to_tray && status.tray_available {
-                                "Runs in the tray when closed"
+                        egui::RichText::new(if saved.close_to_tray && status.tray_available {
+                            if cfg!(target_os = "macos") {
+                                "Runs in the menu bar when closed"
                             } else {
-                                "Close to quit"
-                            },
-                        )
+                                "Runs in the tray when closed"
+                            }
+                        } else {
+                            "Close to quit"
+                        })
                         .small()
                         .color(colors.muted),
                     );
@@ -646,6 +656,29 @@ fn settings(ui: &mut egui::Ui, saved: &mut Saved, status: &Status<'_>, actions: 
         status.visual_reset,
         status.image,
     );
+    #[cfg(target_os = "macos")]
+    {
+        card(ui, |ui| {
+            ui.label(
+                egui::RichText::new("Background typing").font(theme::heading(theme::SECTION_TITLE)),
+            );
+            ui.label(
+                egui::RichText::new(status.input)
+                    .small()
+                    .color(colors.muted),
+            );
+            if !reeb::macos::input_allowed() {
+                ui.label("Allow reeb in System Settings → Privacy & Security → Input Monitoring, then quit and reopen reeb.");
+                ui.label(
+                    "Already enabled? Remove the old reeb entry and add this signed app again.",
+                );
+                if ui.button("Enable Input Monitoring…").clicked() {
+                    actions.input_permission = true;
+                }
+            }
+        });
+        ui.add_space(16.0);
+    }
     card(ui, |ui| {
         ui.horizontal(|ui| {
             ui.allocate_ui_with_layout(
@@ -655,9 +688,13 @@ fn settings(ui: &mut egui::Ui, saved: &mut Saved, status: &Status<'_>, actions: 
                     ui.spacing_mut().item_spacing.y = 4.0;
                     ui.label("Appearance");
                     ui.label(
-                        egui::RichText::new("System follows Windows automatically.")
-                            .small()
-                            .color(colors.muted),
+                        egui::RichText::new(if cfg!(target_os = "macos") {
+                            "System follows macOS automatically."
+                        } else {
+                            "System follows Windows automatically."
+                        })
+                        .small()
+                        .color(colors.muted),
                     );
                 },
             );
@@ -742,7 +779,7 @@ fn settings(ui: &mut egui::Ui, saved: &mut Saved, status: &Status<'_>, actions: 
         )
         .on_hover_text("Balance the volume when changing switches.");
         toggle(ui, &mut saved.settings.mute_modifiers, "Mute modifier keys")
-            .on_hover_text("Silence Ctrl, Alt, Shift, Windows, Caps Lock, Esc, and function keys. Tab stays audible.");
+            .on_hover_text(if cfg!(target_os = "macos") { "Silence Control, Option, Shift, Command, Caps Lock, Esc, and function keys. Tab stays audible." } else { "Silence Ctrl, Alt, Shift, Windows, Caps Lock, Esc, and function keys. Tab stays audible." });
         ui.separator();
         ui.add_enabled_ui(saved.switch.has_release_sounds(), |ui| {
             toggle(
@@ -773,16 +810,20 @@ fn settings(ui: &mut egui::Ui, saved: &mut Saved, status: &Status<'_>, actions: 
     keyboard::show(ui, status.key_events, status.visual_reset);
     ui.add_space(20.0);
     card(ui, |ui| {
-        #[cfg(windows)]
+        #[cfg(any(windows, target_os = "macos"))]
         toggle(ui, &mut saved.close_to_tray, "Keep running when closed");
         ui.horizontal(|ui| {
             ui.vertical(|ui| {
                 ui.spacing_mut().item_spacing.y = 4.0;
                 ui.label(
                     egui::RichText::new(if status.tray_available {
-                        "Find Reeb in the Windows tray."
+                        if cfg!(target_os = "macos") {
+                            "Find reeb in the menu bar. Quit with Command-Q."
+                        } else {
+                            "Find Reeb in the Windows tray."
+                        }
                     } else {
-                        "Tray unavailable. Closing will quit."
+                        "Background controls unavailable. Closing will quit."
                     })
                     .small()
                     .color(colors.muted),
@@ -910,6 +951,16 @@ mod tests {
         assert!(!saved.enabled);
         let (output, _) = draw(&ctx, &mut page, &mut saved, vec![]);
         position(&output, "Reeb is off");
+        #[cfg(target_os = "macos")]
+        let (output, _) = {
+            // The permission setup card can place the device name below the fold.
+            let track = ctx
+                .read_response(egui::Id::new("page-scrollbar"))
+                .unwrap()
+                .rect;
+            draw(&ctx, &mut page, &mut saved, click(track.center()));
+            draw(&ctx, &mut page, &mut saved, vec![])
+        };
         let refresh = position(&output, "Refresh devices");
         let device = position(&output, "Headphones");
         assert!(device.y > refresh.y);

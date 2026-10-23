@@ -32,11 +32,15 @@ pub struct App {
     audition: Audition,
     image: egui::TextureHandle,
     visual_events: Vec<KeyEvent>,
-    #[cfg(windows)]
-    _input: Option<reeb::input::GlobalInput>,
+    #[cfg(any(windows, target_os = "macos"))]
+    input: Option<reeb::input::GlobalInput>,
     #[cfg(windows)]
     tray: Option<reeb::tray::Tray>,
     tray_error: Option<String>,
+    #[cfg(target_os = "macos")]
+    menu: reeb::macos::Menu,
+    #[cfg(target_os = "macos")]
+    input_retry: Instant,
     last_retry: Instant,
     page: Page,
     exiting: bool,
@@ -64,7 +68,15 @@ impl App {
             Ok(input) => (Some(input), "Listening across Windows".to_owned()),
             Err(error) => (None, format!("Background input unavailable: {error}")),
         };
-        #[cfg(not(windows))]
+        #[cfg(target_os = "macos")]
+        let (input, input_status) = match reeb::input::GlobalInput::start(shared.clone()) {
+            Ok(input) => (Some(input), "Listening across macOS".to_owned()),
+            Err(error) => (
+                None,
+                format!("{error} Focused typing is available meanwhile."),
+            ),
+        };
+        #[cfg(not(any(windows, target_os = "macos")))]
         let input_status = "Mac preview: type while this window is focused".to_owned();
         #[cfg(windows)]
         let (tray, tray_error) = {
@@ -87,6 +99,8 @@ impl App {
                 ),
             }
         };
+        #[cfg(target_os = "macos")]
+        let menu = reeb::macos::Menu::new(&cc.egui_ctx, saved.enabled);
         let mut app = Self {
             saved,
             bank,
@@ -99,14 +113,18 @@ impl App {
             preview: Preview::default(),
             audition: Audition::default(),
             image: icon::image(&cc.egui_ctx),
-            #[cfg(windows)]
-            _input: input,
+            #[cfg(any(windows, target_os = "macos"))]
+            input,
             #[cfg(windows)]
             tray,
             #[cfg(windows)]
             tray_error,
             #[cfg(not(windows))]
             tray_error: None,
+            #[cfg(target_os = "macos")]
+            menu,
+            #[cfg(target_os = "macos")]
+            input_retry: Instant::now(),
             last_retry: Instant::now(),
             page: Page::default(),
             exiting: false,
@@ -148,6 +166,8 @@ impl App {
         if let Some(tray) = &self.tray {
             tray.update();
         }
+        #[cfg(target_os = "macos")]
+        self.menu.update(enabled);
     }
 
     fn tray_available(&self) -> bool {
@@ -157,15 +177,21 @@ impl App {
                 .as_ref()
                 .is_some_and(reeb::tray::Tray::is_available)
         }
-        #[cfg(not(windows))]
+        #[cfg(target_os = "macos")]
+        {
+            self.menu.is_available()
+        }
+        #[cfg(not(any(windows, target_os = "macos")))]
         {
             false
         }
     }
 
-    #[cfg(windows)]
+    #[cfg(any(windows, target_os = "macos"))]
     fn restore(&mut self, ctx: &egui::Context) {
         self.hidden = false;
+        #[cfg(target_os = "macos")]
+        self.menu.show_window();
         ctx.send_viewport_cmd(egui::ViewportCommand::Maximized(false));
         ctx.send_viewport_cmd(egui::ViewportCommand::InnerSize(egui::vec2(840.0, 660.0)));
         ctx.send_viewport_cmd(egui::ViewportCommand::Visible(true));
@@ -173,7 +199,7 @@ impl App {
         ctx.send_viewport_cmd(egui::ViewportCommand::Focus);
     }
 
-    #[cfg(windows)]
+    #[cfg(any(windows, target_os = "macos"))]
     fn open_page(&mut self, ctx: &egui::Context, page: Page) {
         self.preview.cancel();
         self.page = page;
@@ -219,9 +245,43 @@ impl App {
         }
     }
 
+    #[cfg(target_os = "macos")]
+    fn mac_actions(&mut self, ctx: &egui::Context) {
+        while let Some(action) = self.menu.next_action() {
+            match action {
+                reeb::macos::Action::Open => self.restore(ctx),
+                reeb::macos::Action::Settings => self.open_page(ctx, Page::Settings),
+                reeb::macos::Action::Toggle => self.set_enabled(!self.saved.enabled),
+                reeb::macos::Action::Quit => self.quit(ctx),
+                reeb::macos::Action::Close => ctx.send_viewport_cmd(egui::ViewportCommand::Close),
+            }
+        }
+        if self.input_retry.elapsed() >= Duration::from_secs(3) {
+            self.input_retry = Instant::now();
+            if self.input.as_ref().is_some_and(|input| !input.is_active())
+                || !reeb::macos::input_allowed()
+            {
+                self.input = None;
+                self.shared.reset_visualization();
+            }
+            if self.input.is_none() {
+                match reeb::input::GlobalInput::start(self.shared.clone()) {
+                    Ok(input) => {
+                        self.input = Some(input);
+                        self.input_status = "Listening across macOS".into();
+                    }
+                    Err(error) => {
+                        self.input_status =
+                            format!("{error} Focused typing is available meanwhile.")
+                    }
+                }
+            }
+        }
+    }
+
     fn focused_keys(&self, ctx: &egui::Context) {
-        #[cfg(windows)]
-        if self._input.is_some() {
+        #[cfg(any(windows, target_os = "macos"))]
+        if self.input.is_some() {
             return;
         }
         ctx.input(|input| {
@@ -266,7 +326,7 @@ mod tests {
             preview: Preview::default(),
             audition: Audition::default(),
             image: icon::image(ctx),
-            _input: None,
+            input: None,
             tray: None,
             tray_error: None,
             last_retry: Instant::now(),
@@ -364,6 +424,8 @@ impl eframe::App for App {
     fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
         #[cfg(windows)]
         self.tray_actions(ctx);
+        #[cfg(target_os = "macos")]
+        self.mac_actions(ctx);
         #[cfg(windows)]
         if let Some(popup) = &mut self.popup {
             let before = self.saved.enabled;
@@ -412,6 +474,8 @@ impl eframe::App for App {
         if self.hidden {
             ui::reset_visualizer(ctx);
             self.shared.set_visualize(false);
+            #[cfg(target_os = "macos")]
+            ctx.request_repaint_after(Duration::from_millis(250));
             return;
         }
         let old_enabled = self.saved.enabled;
@@ -491,6 +555,11 @@ impl eframe::App for App {
             Instant::now(),
         );
         ctx.request_repaint_after(self.audition.delay(Instant::now()));
+        #[cfg(target_os = "macos")]
+        if actions.input_permission {
+            reeb::macos::request_input_access();
+            self.input_retry = Instant::now() - Duration::from_secs(3);
+        }
         if actions.quit {
             self.quit(ctx);
         }

@@ -9,17 +9,18 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def generate():
+def generate(target="x86_64-pc-windows-msvc"):
     metadata = json.loads(subprocess.check_output(
         ["cargo", "metadata", "--locked", "--offline", "--format-version", "1",
-         "--filter-platform", "x86_64-pc-windows-msvc"], cwd=ROOT, text=True,
+         "--filter-platform", target], cwd=ROOT, text=True,
     ))
     selected = {node["id"] for node in metadata["resolve"]["nodes"]}
     packages = sorted((package for package in metadata["packages"]
                        if package["id"] in selected and package["name"] != "reeb"),
                       key=lambda package: (package["name"], package["version"]))
+    graph = "Windows" if target == "x86_64-pc-windows-msvc" else target
     sections = ["THIRD-PARTY NOTICES\n\n"
-                "License texts for the locked Windows dependency graph, including build tools.\n"
+                f"License texts for the locked {graph} dependency graph, including build tools.\n"
                 "A package's presence does not imply all of its optional features are linked.\n"]
     supplements = ROOT / "assets" / "dependency-licenses"
     sources = json.loads((supplements / "sources.json").read_text(encoding="utf-8"))
@@ -56,13 +57,15 @@ def generate():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--target", default="x86_64-pc-windows-msvc")
+    parser.add_argument("--output", type=Path, default=ROOT / "THIRD-PARTY-NOTICES.txt")
     args = parser.parse_args()
-    result = generate()
-    destination = ROOT / "THIRD-PARTY-NOTICES.txt"
+    result = generate(args.target)
+    destination = args.output
     if args.check:
         if destination.read_text(encoding="utf-8") != result:
             raise SystemExit("Dependency notices are stale; run scripts/generate-notices.py")
-        print("Dependency notices match the locked Windows graph")
+        print(f"Dependency notices match the locked {args.target} graph")
     else:
         destination.write_text(result, encoding="utf-8")
         print(f"Wrote {destination.name}")
