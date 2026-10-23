@@ -18,9 +18,12 @@ reeb is **free**, and available for windows, macos, & linux.
 
 ## download
 
-[download reeb.exe for windows (x64)](https://github.com/MrFok/reeb/releases/latest/download/reeb.exe)
+[go to releases to download reeb](https://github.com/MrFok/reeb/releases/latest).
 
-open `reeb.exe` to start. no installer or administrator privileges are required. also download and retain the [license](https://github.com/MrFok/reeb/releases/latest/download/LICENSE) and [third-party notices](https://github.com/MrFok/reeb/releases/latest/download/reeb-notices.zip) with the app.
+- **windows (x64):** download `reeb-windows-x64.zip`, extract it, and open `reeb.exe`. keep the included licenses and notices with the app.
+- **macOS (apple silicon):** download the macOS DMG, open it, and drag **reeb.app** into **Applications**.
+
+app downloads are attached to releases. this repository contains the source code and required assets.
 
 ## macOS
 

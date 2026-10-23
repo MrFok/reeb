@@ -34,7 +34,7 @@ GitHub Actions currently has no Developer ID or notarization credentials. CI exp
 To repeat the packaged checks locally:
 
 ```sh
-python3 scripts/test-macos-package.py dist/macos/reeb-0.1.1-macos-arm64.dmg
+python3 scripts/test-macos-package.py dist/macos/reeb-0.1.2-macos-arm64.dmg
 ```
 
 ## Developer ID signing and notarization

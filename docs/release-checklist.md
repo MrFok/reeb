@@ -54,7 +54,7 @@ Create the new repository from this folder alone. Configure Actions and branch p
 
 Every push to `main` increments the patch version (the third number), for example `0.1.1` → `0.1.2`. Update both `Cargo.toml` and the root `reeb` package entry in `Cargo.lock` before pushing.
 
-Set `Cargo.toml` to the intended version and push its matching `vX.Y.Z` tag after approval. The release workflow runs CI, packages the build and prepares the GitHub release files. Review the executable, ZIP, notices and checksums before making a release public. Keep notices with standalone executable downloads; the complete Windows ZIP is the recommended download.
+Set `Cargo.toml` to the intended version and push its matching `vX.Y.Z` tag after approval. The release workflow runs CI, packages the build and prepares the GitHub release files. Review the executable, ZIP, notices and checksums before making a release public. Keep notices with standalone executable downloads; the complete Windows ZIP is the recommended download. Keep all downloads as GitHub Release assets, and point the README download instructions to the Releases page. Do not commit generated executables, disk images or release archives.
 
 For macOS, follow [Mac signing and notarization](macos.md#developer-id-signing-and-notarization). Only publish the Developer ID-signed, notarized and stapled DMG after confirming its signing record and final checksum. The default Mac builder output is a local test package.
 
