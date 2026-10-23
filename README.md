@@ -8,7 +8,7 @@ mechanical keyboard sounds for windows, built in rust.
 
 choose from over 15 keyboard sound packs and shape your keyboard's tone and feel.
 
-reeb is free and used about 60 MB of memory in our windows comparison, roughly 80% less than the comparison app's 350 MB. memory use varies with your system, settings and workload.
+reeb is **free** and uses 80% less memory 
 
 ## download
 
