@@ -1,4 +1,4 @@
-param([string]$Tag = '')
+param([string]$Tag = '', [string]$IsccPath = '')
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -15,6 +15,21 @@ try {
         throw 'Use the x86_64-pc-windows-msvc Rust toolchain.'
     }
     if ($env:CARGO_BUILD_TARGET) { throw 'Unset CARGO_BUILD_TARGET to build for the host toolchain.' }
+
+    if (-not $IsccPath) {
+        $compiler = Get-Command ISCC.exe -ErrorAction SilentlyContinue
+        if ($compiler) { $IsccPath = $compiler.Source }
+        else {
+            $candidates = @(
+                (Join-Path $env:ProgramFiles 'Inno Setup 6/ISCC.exe'),
+                (Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6/ISCC.exe')
+            )
+            $IsccPath = $candidates | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } | Select-Object -First 1
+        }
+    }
+    if (-not $IsccPath -or -not (Test-Path -LiteralPath $IsccPath -PathType Leaf)) {
+        throw 'Inno Setup 6 is required. Supply its compiler with -IsccPath; this script does not install software.'
+    }
 
     $metadataJson = cargo metadata --locked --no-deps --format-version 1
     if ($LASTEXITCODE -ne 0) { throw 'Cannot read locked package metadata.' }
@@ -94,14 +109,20 @@ try {
     Compress-Archive -LiteralPath $packagePaths -DestinationPath dist/reeb-windows-x64.zip -CompressionLevel Optimal -Force
     Compress-Archive -LiteralPath $noticePaths -DestinationPath dist/reeb-notices.zip -CompressionLevel Optimal -Force
 
-    $releaseFiles = @('reeb.exe', 'reeb-windows-x64.zip', 'reeb-notices.zip', 'LICENSE')
+    & $IsccPath "/DAppVersion=$version" 'packaging/windows/reeb.iss'
+    if ($LASTEXITCODE -ne 0) { throw 'Windows installer compilation failed.' }
+    if (-not (Test-Path -LiteralPath dist/reeb-setup-windows-x64.exe -PathType Leaf)) {
+        throw 'The Windows installer was not produced.'
+    }
+
+    $releaseFiles = @('reeb.exe', 'reeb-setup-windows-x64.exe', 'reeb-windows-x64.zip', 'reeb-notices.zip', 'LICENSE')
     $checksums = @($releaseFiles | ForEach-Object {
         $hash = (Get-FileHash -LiteralPath (Join-Path dist $_) -Algorithm SHA256).Hash.ToLowerInvariant()
         "$hash  $_"
     })
     [IO.File]::WriteAllLines((Join-Path (Get-Location).Path 'dist/SHA256SUMS'), $checksums, [Text.UTF8Encoding]::new($false))
     Write-Output "Built Reeb $version from $executable; release files are in dist/."
-    Write-Output 'Recommended: reeb-windows-x64.zip. Keep LICENSE and reeb-notices.zip with a standalone reeb.exe download.'
+    Write-Output 'Recommended: reeb-setup-windows-x64.exe (unsigned, per-user installer). Keep LICENSE and reeb-notices.zip with a standalone reeb.exe download.'
 } finally {
     Pop-Location
 }

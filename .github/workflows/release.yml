@@ -35,7 +35,7 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
           $ErrorActionPreference = 'Stop'
-          $files = @('reeb.exe', 'reeb-windows-x64.zip', 'reeb-notices.zip', 'LICENSE')
+          $files = @('reeb.exe', 'reeb-setup-windows-x64.exe', 'reeb-windows-x64.zip', 'reeb-notices.zip', 'LICENSE')
           $lines = @(Get-Content -LiteralPath dist/SHA256SUMS)
           if ($lines.Count -ne $files.Count) { throw 'Unexpected checksum inventory.' }
           foreach ($file in $files) {
@@ -43,9 +43,9 @@ jobs:
               if ($lines -cnotcontains "$hash  $file") { throw "Checksum missing or incorrect: $file" }
           }
           $notes = @"
-          Recommended download: reeb-windows-x64.zip. It contains the application, README, MIT LICENSE, and required third-party notices.
+          Recommended download: reeb-setup-windows-x64.exe. The per-user installer includes the application and all licenses/notices, adds a Start Menu shortcut and uninstall entry, and requires no administrator privileges. The Windows binaries are unsigned and may trigger SmartScreen warnings.
 
-          If downloading reeb.exe separately, also download and retain LICENSE and reeb-notices.zip. SHA256SUMS covers the EXE, both ZIPs, and LICENSE.
+          Portable alternatives: reeb-windows-x64.zip includes the app and notices. If downloading reeb.exe separately, also download and retain LICENSE and reeb-notices.zip. SHA256SUMS covers the app, installer, both ZIPs, and LICENSE.
 
           Complete the [release checklist](https://github.com/$env:GH_REPO/blob/$env:GITHUB_SHA/docs/release-checklist.md), including source permissions and interactive Windows checks, before publishing this draft.
           "@
